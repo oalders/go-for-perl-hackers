@@ -72,6 +72,26 @@ Multi-line (C-Style)
 
 ### Print
 
+#### Printing strings
+
+Perl:
+
+```perl
+print 'hello, world';
+```
+
+Go:
+
+```
+package main
+
+import "fmt"
+
+func main () {
+    fmt.Println("hello, world")
+}
+```
+
 #### Formatted print statements.
 
 Perl:
@@ -94,6 +114,21 @@ func main() {
 ```
 
 See [golang.org/pkg/fmt/](https://golang.org/pkg/fmt/)
+
+#### Printing from within a test
+
+Perl:
+
+```perl
+diag 'foo happens';
+```
+
+Go:
+
+```go
+t.Log("foo happens")
+t.Logf("We are open %d days per %s", 7, "week")
+```
 
 ### Variables
 
@@ -172,16 +207,15 @@ var i, j int = 1, 2
 Perl:
 
 ```perl
-my $foo;
-if ( !defined $foo ) {
+if ( defined $foo ) {
     ...;
 }
 ```
 
 Go:
+
 ```go
-var foo
-if foo == nil {
+if foo != nil {
 }
 ```
 
@@ -190,13 +224,42 @@ if foo == nil {
 Perl:
 
 ```perl
-my $gopher = 'go' . 'pher';
+my $foo = 'go';
+my $bar = 'pher';
+
+$gopher = "$foo$bar";
+$gopher = $foo . $bar;
+$gopher = join q{}, $foo, $bar;
+$gopher = sprintf '%s%s', $foo, $bar;
 ```
 
 Go:
 
 ```go
-gopher := "go"+"pher"
+foo := "go"
+bar := "pher"
+
+gopher := foo + bar
+gopher := fmt.Sprintf("%s%s", foo, bar)
+```
+
+```go
+package main
+
+import (
+    "bytes"
+    "fmt"
+)
+
+func main() {
+    var buffer bytes.Buffer
+    foo := "go"
+    bar := "pher"
+
+    buffer.WriteString(foo)
+    buffer.WriteString(bar)
+    fmt.Println(buffer.String())
+}
 ```
 
 ### Constants
@@ -227,13 +290,15 @@ Constants cannot be declared using the := syntax.
 Perl:
 
 ```perl
-my @array = (1..3);
+my @foo = (1..3);
+my $first = $foo[0];
 ```
 
 Go:
 
 ```go
-array := [3]int{1,2,3}
+foo := [3]int{1,2,3}
+first := foo[0]
 ```
 
 #### Size of an array:
@@ -257,7 +322,7 @@ Perl:
 ```perl
 use Data::Printer; # exports p()
 
-my %foo = ( 
+my %foo = (
     X => 1,
     Y => 2,
 );
@@ -271,6 +336,8 @@ p %foo;
 #    X => 4,
 #    Y => 2,
 # }
+
+delete $foo{X};
 ```
 
 Go:
@@ -290,11 +357,13 @@ func main() {
 	v.X = 4
 	fmt.Println(v.X) // prints 4
 	fmt.Printf("%+v\n", v) // prints {X:4 Y:2}
-	
+
 	// additional examples
 	v1 = Vertex{1, 2}  // has type Vertex
 	v2 = Vertex{X: 1}  // Y:0 is implicit
 	v3 = Vertex{}      // X:0 and Y:0
+
+	delete(v, "X")
 }
 ```
 
@@ -331,12 +400,12 @@ func main() {
 	    user    string
 		pass	string
     }
-	
+
 	config.user = "florence"
 	config.pass = "machine"
-	
+
 	fmt.Printf("%+v", config)
-	
+
 	return
 }
 ```
@@ -387,7 +456,7 @@ if foo > 1 {
 } else {
      fmt.Println("baz")
 }
-``` 
+```
 
 ### Loops
 
@@ -401,6 +470,8 @@ for ( my $i = 0 ; $i < 10 ; $i++ ) {
     $sum += $i;
 }
 ```
+
+Go:
 
 ```go
 sum := 0
@@ -444,4 +515,32 @@ Go:
 ```go
 for {
 }
+```
+
+### Running Tests
+
+Perl:
+
+```perl
+$ perl Makefile.pl
+$ make
+$ make test
+```
+
+or
+
+```perl
+$ prove -l t/path/to/test.t
+```
+
+Go:
+
+```go
+$ go test
+```
+
+To test a subset of functions:
+
+```go
+$ go test -run regexp
 ```
