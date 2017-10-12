@@ -371,6 +371,8 @@ See [tour.golang.org/moretypes/5](https://tour.golang.org/moretypes/5)
 
 ### Dumping Data Structures
 
+#### To your terminal
+
 Perl:
 
 ```perl
@@ -407,6 +409,112 @@ func main() {
 	fmt.Printf("%+v", config)
 
 	return
+}
+```
+
+Or:
+
+```go
+package main
+
+import "github.com/davecgh/go-spew/spew"
+
+func main() {
+	var config struct {
+	    user    string
+		pass	string
+    }
+
+	config.user = "florence"
+	config.pass = "machine"
+
+	spew.Dump(config)
+
+	return
+}
+```
+
+#### To disk (write)
+
+Perl:
+
+```perl
+use Data::Printer; # exports np()
+use Path::Tiny qw(path);
+
+my @list = ( 1..3 );
+path('/tmp/foo.txt')->spew( np( @list ) );
+```
+
+Go:
+
+```go
+package main
+
+import (
+    "log"
+    "os"
+
+    "github.com/davecgh/go-spew/spew"
+)
+
+func main() {
+    list := [3]int{1, 2, 3}
+
+    file, err := os.OpenFile(
+        "/tmp/foo.txt",
+        os.O_CREATE|os.O_WRONLY,
+        0666,
+    )
+
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    spew.Fdump(file, list)
+    file.Close()
+}
+```
+
+#### To disk (append)
+
+Perl:
+
+```perl
+use Data::Printer; # exports np()
+use Path::Tiny qw(path);
+
+my @list = ( 1..3 );
+path('/tmp/foo.txt')->append( np( @list ) );
+```
+
+Go:
+
+```go
+package main
+
+import (
+    "log"
+    "os"
+
+    "github.com/davecgh/go-spew/spew"
+)
+
+func main() {
+    list := [3]int{1, 2, 3}
+
+    file, err := os.OpenFile(
+        "/tmp/foo.txt",
+        os.O_APPEND|os.O_CREATE|os.O_WRONLY,
+        0666,
+    )
+
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    spew.Fdump(file, list)
+    file.Close()
 }
 ```
 
