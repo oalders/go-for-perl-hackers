@@ -215,6 +215,11 @@ if ( defined $foo ) {
 Go:
 
 ```go
+//string type
+if foo != "" {
+}
+
+// numeric type
 if foo != nil {
 }
 ```
