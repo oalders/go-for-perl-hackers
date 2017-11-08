@@ -154,6 +154,20 @@ pi := 3.14             // implicit cast as float64
 pi := "3.14"           // implicit cast as string
 ```
 
+##### Instantiate multiple variables at once
+
+Perl:
+
+```perl
+my ($one, $two, $three);
+```
+
+Go:
+
+```go
+var one, two, three string
+```
+
 ##### Double vs Single Quotes
 
 Perl:
