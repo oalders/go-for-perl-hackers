@@ -188,7 +188,7 @@ See [golang.org/ref/spec#Rune_literals](https://golang.org/ref/spec#Rune_literal
 
 ##### Multiple Variables
 
-##### Initialize without values
+##### Declare without explicit values
 
 Perl:
 
@@ -202,7 +202,7 @@ Go:
 var foo, bar int
 ```
 
-##### Initialize with values
+##### Declare with explicit values
 
 Perl:
 
