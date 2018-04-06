@@ -216,12 +216,13 @@ Go:
 var i, j int = 1, 2
 ```
 
-#### Checking for definedness
+#### Checking for (un)definedness
 
 Perl:
 
 ```perl
-if ( defined $foo ) {
+my $foo;
+if ( ! defined $foo ) {
     ...;
 }
 ```
@@ -229,12 +230,17 @@ if ( defined $foo ) {
 Go:
 
 ```go
-//string type
-if foo != "" {
+var myString string
+
+if myString == "" {
+    fmt.Println("Empty")
 }
 
-// numeric type
-if foo != nil {
+
+var mySlice []int
+
+if mySlice == nil {
+    fmt.Println("nil")
 }
 ```
 
