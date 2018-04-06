@@ -108,7 +108,7 @@ package main
 import ( "fmt" )
 
 func main() {
-	fmt.Printf("We are open %d days per %s", 7, "week")
+    fmt.Printf("We are open %d days per %s", 7, "week")
 }
 
 ```
@@ -373,22 +373,22 @@ package main
 import "fmt"
 
 type Vertex struct {
-	X int
-	Y int
+    X int
+    Y int
 }
 
 func main() {
-	v := Vertex{1, 2}
-	v.X = 4
-	fmt.Println(v.X) // prints 4
-	fmt.Printf("%+v\n", v) // prints {X:4 Y:2}
+    v := Vertex{1, 2}
+    v.X = 4
+    fmt.Println(v.X) // prints 4
+    fmt.Printf("%+v\n", v) // prints {X:4 Y:2}
 
-	// additional examples
-	v1 = Vertex{1, 2}  // has type Vertex
-	v2 = Vertex{X: 1}  // Y:0 is implicit
-	v3 = Vertex{}      // X:0 and Y:0
+    // additional examples
+    v1 = Vertex{1, 2}  // has type Vertex
+    v2 = Vertex{X: 1}  // Y:0 is implicit
+    v3 = Vertex{}      // X:0 and Y:0
 
-	delete(v, "X")
+    delete(v, "X")
 }
 ```
 
@@ -423,17 +423,17 @@ package main
 import "fmt"
 
 func main() {
-	var config struct {
-	    user    string
-		pass	string
+    var config struct {
+        user    string
+        pass    string
     }
 
-	config.user = "florence"
-	config.pass = "machine"
+    config.user = "florence"
+    config.pass = "machine"
 
-	fmt.Printf("%+v", config)
+    fmt.Printf("%+v", config)
 
-	return
+    return
 }
 ```
 
@@ -445,17 +445,17 @@ package main
 import "github.com/davecgh/go-spew/spew"
 
 func main() {
-	var config struct {
-	    user    string
-		pass	string
+    var config struct {
+        user    string
+        pass    string
     }
 
-	config.user = "florence"
-	config.pass = "machine"
+    config.user = "florence"
+    config.pass = "machine"
 
-	spew.Dump(config)
+    spew.Dump(config)
 
-	return
+    return
 }
 ```
 
@@ -609,7 +609,7 @@ Go:
 ```go
 sum := 0
 for i := 0; i < 10; i++ {
-	sum += i
+    sum += i
 }
 ```
 
@@ -630,7 +630,7 @@ Go:
 // The init and post statement in a Go for loop are optional.
 sum := 0
 for sum < 10 {
-	sum += sum
+    sum += sum
 }
 ```
 
