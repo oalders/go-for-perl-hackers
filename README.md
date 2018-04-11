@@ -619,8 +619,9 @@ Perl:
 
 ```perl
 my $sum = 0;
-while ( $sum < 10 ) {
-    $sum += $i;
+my $i = 0;
+while ( $i < 10 ) {
+    $sum += $i++;
 }
 ```
 
@@ -629,8 +630,10 @@ Go:
 ```go
 // The init and post statement in a Go for loop are optional.
 sum := 0
-for sum < 10 {
-    sum += sum
+i := 0
+for i < 10 {
+    sum += i
+    i += 1
 }
 ```
 
@@ -655,7 +658,7 @@ for {
 Perl:
 
 ```perl
-$ perl Makefile.pl
+$ perl Makefile.PL
 $ make
 $ make test
 ```
