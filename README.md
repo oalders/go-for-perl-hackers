@@ -658,7 +658,7 @@ for {
 Perl:
 
 ```perl
-$ perl Makefile.pl
+$ perl Makefile.PL
 $ make
 $ make test
 ```
