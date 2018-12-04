@@ -8,6 +8,13 @@ The primary aim of this cheat sheet is to help Perl programmers get up and runni
 
 Consider adding the `vim-go` plugin to your `.vimrc`
 
+If you're using [vim-plug](https://github.com/junegunn/vim-plug), that would
+look something like:
+
+```
+Plug 'fatih/vim-go'
+```
+
 If you're using Pathogen, that would look something like:
 
 ```
