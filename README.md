@@ -139,6 +139,20 @@ t.Logf("We are open %d days per %s", 7, "week")
 
 ### Variables
 
+#### Environment Variables
+
+Perl:
+
+```perl
+print "GOPATH: $ENV{GOPATH}\n";
+```
+
+Go:
+
+```go
+fmt.Println("GOPATH: ", os.Getenv("GOPATH"))
+```
+
 #### Variable Assignment
 
 Perl:
