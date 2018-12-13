@@ -237,6 +237,51 @@ Go:
 var i, j int = 1, 2
 ```
 
+#### Boolean checks (true/false)
+
+Perl:
+
+```perl
+my $success = 1;    # true
+$success = 'foo';   # true
+$success = 0;       # false
+$success;           # (undef) false
+
+if ($success) {
+    print "This succeeded";
+}
+
+if ( !$success ) {
+    print "This failed";
+}
+
+```
+
+Go:
+
+```go
+var success bool
+
+success = true
+success = false
+
+if success == true {
+    fmt.Println("This succeeded")
+}
+
+if success {
+    fmt.Println("This succeeded")
+}
+
+if success == false {
+    fmt.Println("This failed")
+}
+
+if !success {
+    fmt.Println("This failed")
+}
+```
+
 #### Checking for (un)definedness
 
 Perl:
