@@ -735,12 +735,22 @@ or
 $ prove -l t/path/to/test.t
 ```
 
+Use the `-v` flag for verbose output:
 
+```perl
+$ prove -lv t/path/to/test.t
+```
 
 ####Go:
 
 ```go
 $ go test
+```
+
+Use the `-v` flag for verbose output:
+
+```go
+$ go test -v
 ```
 
 If you're using `vim-go`, use `:GoTest` either from your `foo.go` or
