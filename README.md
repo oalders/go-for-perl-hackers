@@ -55,7 +55,7 @@ In this section we'll document some commonly used Perl constructs and try to fin
 
 ### Comments
 
-Perl:
+####Perl:
 
 ```perl
 # single line
@@ -67,7 +67,7 @@ Multi line
 =cut
 ```
 
-Go:
+####Go:
 
 ```go
 // single line (C++-style)
@@ -81,13 +81,13 @@ Multi-line (C-Style)
 
 #### Printing strings
 
-Perl:
+####Perl:
 
 ```perl
 print 'hello, world';
 ```
 
-Go:
+####Go:
 
 ```
 package main
@@ -101,13 +101,13 @@ func main () {
 
 #### Formatted print statements.
 
-Perl:
+####Perl:
 
 ```perl
 printf('We are open %i days per %s', 7, 'week');
 ```
 
-Go:
+####Go:
 
 ```go
 package main
@@ -124,13 +124,13 @@ See [golang.org/pkg/fmt/](https://golang.org/pkg/fmt/)
 
 #### Printing from within a test
 
-Perl:
+####Perl:
 
 ```perl
 diag 'foo happens';
 ```
 
-Go:
+####Go:
 
 ```go
 t.Log("foo happens")
@@ -141,13 +141,13 @@ t.Logf("We are open %d days per %s", 7, "week")
 
 #### Environment Variables
 
-Perl:
+####Perl:
 
 ```perl
 print "GOPATH: $ENV{GOPATH}\n";
 ```
 
-Go:
+####Go:
 
 ```go
 fmt.Println("GOPATH: ", os.Getenv("GOPATH"))
@@ -155,14 +155,14 @@ fmt.Println("GOPATH: ", os.Getenv("GOPATH"))
 
 #### Variable Assignment
 
-Perl:
+####Perl:
 
 ```perl
 my $foo = 'bar';
 my $pi = 3.14;
 ```
 
-Go:
+####Go:
 
 ```go
 // the following assignments are equivalent
@@ -177,13 +177,13 @@ pi := "3.14"           // implicit cast as string
 
 ##### Instantiate multiple variables at once
 
-Perl:
+####Perl:
 
 ```perl
 my ($one, $two, $three);
 ```
 
-Go:
+####Go:
 
 ```go
 var one, two, three string
@@ -191,14 +191,14 @@ var one, two, three string
 
 ##### Double vs Single Quotes
 
-Perl:
+####Perl:
 
 ```perl
 my $foo = 'bar'; // no variable interpolation
 my $bar = "$foo baz"; // allow for variable interpolation
 ```
 
-Go:
+####Go:
 
 ```go
 foo := "本" // implicitly cast as a string
@@ -211,13 +211,13 @@ See [golang.org/ref/spec#Rune_literals](https://golang.org/ref/spec#Rune_literal
 
 ##### Declare without explicit values
 
-Perl:
+####Perl:
 
 ```perl
 my ($foo, $bar);
 ```
 
-Go:
+####Go:
 
 ```go
 var foo, bar int
@@ -225,13 +225,13 @@ var foo, bar int
 
 ##### Declare with explicit values
 
-Perl:
+####Perl:
 
 ```perl
 my ($i, $j) = (1, 2);
 ```
 
-Go:
+####Go:
 
 ```go
 var i, j int = 1, 2
@@ -239,7 +239,7 @@ var i, j int = 1, 2
 
 #### Boolean checks (true/false)
 
-Perl:
+####Perl:
 
 ```perl
 my $success = 1;    # true
@@ -257,7 +257,7 @@ if ( !$success ) {
 
 ```
 
-Go:
+####Go:
 
 ```go
 var success bool
@@ -284,7 +284,7 @@ if !success {
 
 #### Checking for (un)definedness
 
-Perl:
+####Perl:
 
 ```perl
 my $foo;
@@ -293,7 +293,7 @@ if ( ! defined $foo ) {
 }
 ```
 
-Go:
+####Go:
 
 ```go
 var myString string
@@ -312,7 +312,7 @@ if mySlice == nil {
 
 #### String Concatenation
 
-Perl:
+####Perl:
 
 ```perl
 my $foo = 'go';
@@ -324,7 +324,7 @@ $gopher = join q{}, $foo, $bar;
 $gopher = sprintf '%s%s', $foo, $bar;
 ```
 
-Go:
+####Go:
 
 ```go
 foo := "go"
@@ -355,14 +355,14 @@ func main() {
 
 ### Constants
 
-Perl:
+####Perl:
 
 ```perl
 use Const::Fast;
 const my $hello => 'Hello, world';
 ```
 
-Go:
+####Go:
 
 ```go
 // Create an *untyped* string constant
@@ -378,14 +378,14 @@ Constants cannot be declared using the := syntax.
 
 #### Create an Array
 
-Perl:
+####Perl:
 
 ```perl
 my @foo = (1..3);
 my $first = $foo[0];
 ```
 
-Go:
+####Go:
 
 ```go
 foo := [3]int{1,2,3}
@@ -394,7 +394,7 @@ first := foo[0]
 
 #### Size of an array:
 
-Perl:
+####Perl:
 
 ```perl
 my $size = @array;
@@ -408,7 +408,7 @@ size := len(array)
 
 ### Hashes / Structs
 
-Perl:
+####Perl:
 
 ```perl
 use Data::Printer; # exports p()
@@ -431,7 +431,7 @@ p %foo;
 delete $foo{X};
 ```
 
-Go:
+####Go:
 
 ```go
 package main
@@ -464,7 +464,7 @@ See [tour.golang.org/moretypes/5](https://tour.golang.org/moretypes/5)
 
 #### To your terminal
 
-Perl:
+####Perl:
 
 ```perl
 use strict;
@@ -481,7 +481,7 @@ p( %foo );
 say np( %foo );
 ```
 
-Go:
+####Go:
 
 ```go
 package main
@@ -527,7 +527,7 @@ func main() {
 
 #### To disk (write)
 
-Perl:
+####Perl:
 
 ```perl
 use Data::Printer; # exports np()
@@ -537,7 +537,7 @@ my @list = ( 1..3 );
 path('/tmp/foo.txt')->spew( np( @list ) );
 ```
 
-Go:
+####Go:
 
 ```go
 package main
@@ -569,7 +569,7 @@ func main() {
 
 #### To disk (append)
 
-Perl:
+####Perl:
 
 ```perl
 use Data::Printer; # exports np()
@@ -579,7 +579,7 @@ my @list = ( 1..3 );
 path('/tmp/foo.txt')->append( np( @list ) );
 ```
 
-Go:
+####Go:
 
 ```go
 package main
@@ -613,7 +613,7 @@ func main() {
 
 #### if
 
-Perl:
+####Perl:
 
 ```perl
 if ( $foo > 1 ) {
@@ -621,7 +621,7 @@ if ( $foo > 1 ) {
 }
 ```
 
-Go:
+####Go:
 
 ```go
 if ( foo > 1 ) {
@@ -636,7 +636,7 @@ if foo > 1 {
 
 #### else
 
-Perl:
+####Perl:
 
 ```perl
 if ( $foo > 1 ) {
@@ -647,7 +647,7 @@ else {
 }
 ```
 
-Go:
+####Go:
 
 ```go
 if foo > 1 {
@@ -661,7 +661,7 @@ if foo > 1 {
 
 #### For loops
 
-Perl:
+####Perl:
 
 ```perl
 my $sum;
@@ -670,7 +670,7 @@ for ( my $i = 0 ; $i < 10 ; $i++ ) {
 }
 ```
 
-Go:
+####Go:
 
 ```go
 sum := 0
@@ -681,7 +681,7 @@ for i := 0; i < 10; i++ {
 
 #### While loops
 
-Perl:
+####Perl:
 
 ```perl
 my $sum = 0;
@@ -691,7 +691,7 @@ while ( $i < 10 ) {
 }
 ```
 
-Go:
+####Go:
 
 ```go
 // The init and post statement in a Go for loop are optional.
@@ -705,14 +705,14 @@ for i < 10 {
 
 #### Infinite loops
 
-Perl:
+####Perl:
 
 ```perl
 while (1) {
 }
 ```
 
-Go:
+####Go:
 
 ```go
 for {
@@ -721,7 +721,7 @@ for {
 
 ### Running Tests
 
-Perl:
+####Perl:
 
 ```perl
 $ perl Makefile.PL
@@ -735,7 +735,9 @@ or
 $ prove -l t/path/to/test.t
 ```
 
-Go:
+
+
+####Go:
 
 ```go
 $ go test

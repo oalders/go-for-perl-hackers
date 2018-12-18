@@ -1,0 +1,12 @@
+I find error handling in Go to require extra consideration. The guidance given
+to me was: a) error comes from 3rd-pary library? errors.Wrap it to give it a
+stack trace and context. b) error comes from somewhere else in my code?
+errors.WithMessage it to give it context. In some cases just passing the
+original error up the call stack is the right thing. I haven't considered the
+error handling in this PR to the extent of where we should be doing what, but I
+highlighted several places we may want to take another look.  The go app to
+preprocess new locations in the safe coordinates review queue gets compiled to
+the name safe-coordinates-review-queue which may be confusing to someone who
+doesn't know what it needs to do to the review queue. I'd suggest adding
+"preprocessor" or something else to the title to help indicate what the program
+does.
