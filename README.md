@@ -766,3 +766,28 @@ $ go test -run regexp
 If you're using `vim-go`, move your cursor to the name of the function you'd
 like to test.  Running `:GoTest` here will run the function you're currently
 in.
+
+### Debugging
+
+#### Printing Stack Traces
+
+#####Perl:
+
+```perl
+use Carp qw( longmess );
+print longmess();
+```
+
+#####Go:
+
+```go
+package main
+
+import (
+	"runtime/debug"
+)
+
+func main() {
+	debug.PrintStack()
+}
+```
