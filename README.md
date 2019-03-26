@@ -791,3 +791,33 @@ func main() {
 	debug.PrintStack()
 }
 ```
+
+### Parsing URIs
+
+#####Perl:
+
+```perl
+use Mojo::URL ();
+my $url = Mojo::URL->new('https://www.google.com/search?q=schitt%27s+creek');
+print $url->query->param('q'); # schitt's creek
+```
+
+#####Go:
+
+```go
+
+import (
+    "fmt"
+    "log"
+    "net/url"
+)
+
+func main() {
+    url, err := url.Parse("https://www.google.com/search?q=schitt%27s+creek")
+    if err != nil {
+        log.Fatal(err)
+    }
+    q := url.Query()
+    fmt.Println(q.Get("q")) // schitt's creek
+}
+```
