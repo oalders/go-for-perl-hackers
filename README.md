@@ -609,6 +609,42 @@ func main() {
 }
 ```
 
+### File Operations
+
+#### Creating a directory
+
+#### Perl:
+
+```perl
+use Path::Tiny qw( path );
+use Try::Tiny qw( catch try );
+
+my $dir = '.my-perl-cache';
+try {
+    path($dir)->mkpath( { chmod => 0644 });
+}
+catch {
+    die sprintf "Could not create dir %s because of %s", $dir, $_;
+};
+```
+
+#### Go:
+```go
+package main
+
+import (
+	"log"
+	"os"
+)
+
+func main() {
+	cacheDir := ".my-go-cache"
+	if err := os.MkdirAll(cacheDir, 0644); err != nil {
+		log.Printf("Cannot create dir %s because %v", cacheDir, err)
+	}
+}
+```
+
 ### Flow Control
 
 #### if
