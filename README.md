@@ -488,6 +488,33 @@ func main() {
 }
 ```
 
+#### Appending to a List
+
+#### Perl:
+
+```perl
+my @list;
+push @list, 'foo';
+print $list[0];
+```
+
+#### Go:
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+   // Create an empty slice rather than creating an array
+	mySlice := make([]string, 0)
+	mySlice = append(mySlice, "foo")
+	fmt.Print(mySlice[0])
+}
+```
+
 See [tour.golang.org/moretypes/5](https://tour.golang.org/moretypes/5)
 
 ### Dumping Data Structures
