@@ -458,6 +458,36 @@ func main() {
 }
 ```
 
+#### Iterating Over a Hash/Map
+
+#### Perl:
+
+```perl
+my %hash = ( key_1 => 'foo', key_2 => 'bar', );
+for my $key ( keys %hash ) {
+    printf( "key: %s value: %s\n", $key, $hash{$key} );
+}
+
+```
+
+##### Go:
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	myMap := map[string]string{"key1": "foo", "key2": "bar"}
+
+	for k := range myMap {
+		fmt.Printf("key: %s value: %s\n", k, myMap[k])
+	}
+}
+```
+
 See [tour.golang.org/moretypes/5](https://tour.golang.org/moretypes/5)
 
 ### Dumping Data Structures
