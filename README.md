@@ -812,6 +812,34 @@ for {
 }
 ```
 
+### Functions
+
+#### Functions without signatures
+
+#### Perl:
+
+```perl
+sub foo {
+    print 'ok';
+}
+foo();
+```
+
+#### Go:
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	foo()
+}
+func foo() {
+	fmt.Println("foo")
+}
+```
+
 ### Running Tests
 
 #### Perl:
