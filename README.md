@@ -507,8 +507,6 @@ func main() {
 
 ```
 
-
-
 #### Iterating Over a Hash/Map
 
 #### Perl:
@@ -535,6 +533,38 @@ func main() {
 
 	for k := range myMap {
 		fmt.Printf("key: %s value: %s\n", k, myMap[k])
+	}
+}
+```
+
+#### Checking if a Hash/Map Key Exists
+
+#### Perl:
+
+```perl
+
+my %pages = ( home => 'https://metacpan.org' );
+if ( exists $foo{home} ) {
+    ...
+}
+
+```
+
+#### Go:
+
+[https://stackoverflow.com/a/2050629/406224](https://stackoverflow.com/a/2050629/406224)
+
+```go
+
+package main
+
+import "fmt"
+
+func main() {
+	pages := make(map[string]string)
+	pages["home"] = "https://metacpan.org"
+	if _, ok := pages["home"]; ok {
+	    fmt.Println("ok")
 	}
 }
 ```
