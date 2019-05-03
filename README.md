@@ -458,6 +458,57 @@ func main() {
 }
 ```
 
+#### Iterating Over a List
+
+#### Perl:
+
+```perl
+my @foo = ('foo', 'bar', 'baz');
+
+for my $value ( @foo ) {
+    print "$value\n";
+}
+```
+
+```perl
+my @foo = ('foo', 'bar', 'baz');
+
+for (@foo) {
+    print "$_\n";
+}
+```
+
+```perl
+// Print array index for each element
+my @foo = ('foo', 'bar', 'baz');
+
+for my $i (0..$#foo) {
+    print "$i: $foo[$i]\n";
+}
+
+```
+
+#### Go:
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	foo := [3]int{1, 2, 3}
+
+	for i, v := range foo {
+		fmt.Printf("index: %v value: %v\n", i, v)
+	}
+}
+
+```
+
+
+
 #### Iterating Over a Hash/Map
 
 #### Perl:
