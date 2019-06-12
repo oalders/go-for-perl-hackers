@@ -893,6 +893,52 @@ for {
 }
 ```
 
+#### Short-circuiting a loop iteration
+
+Perl:
+
+```perl
+while (1) {
+    ...
+    next if $foo eq 'bar';
+    ...
+}
+```
+
+Go:
+
+```go
+for {
+    if foo == "bar" {
+        continue
+    }
+}
+
+```
+
+#### Terminating a loop
+
+Perl:
+
+```perl
+while (1) {
+    ...
+    last if $foo eq 'bar';
+    ...
+}
+```
+
+Go:
+
+```go
+for {
+    if foo == "bar" {
+        break
+    }
+}
+
+```
+
 ### Functions
 
 #### Functions without signatures
