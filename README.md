@@ -310,6 +310,30 @@ if mySlice == nil {
 }
 ```
 
+#### Incrementing and Decrementing Integer
+
+#### Perl:
+
+See [https://perldoc.perl.org/perlop.html#Auto-increment-and-Auto-decrement](https://perldoc.perl.org/perlop.html#Auto-increment-and-Auto-decrement)
+
+```perl
+$i = 0;  $j = 0;
+print $i++;  # prints 0
+print ++$j;  # prints 1
+
+$i = 0;  $j = 0;
+print $i--;  # prints 0
+print --$j;  # prints -1
+```
+
+#### Go:
+
+```go
+counter := 1
+counter++
+counter--
+```
+
 #### String Concatenation
 
 #### Perl:
