@@ -1093,3 +1093,26 @@ func main() {
     fmt.Println(q.Get("q")) // schitt's creek
 }
 ```
+
+### Command Line Scripts
+
+#### Print first argument to a script
+
+```perl
+print $ARGV[0], "\n" if $ARGV[0];
+```
+
+```go
+package main
+
+import (
+        "fmt"
+        "os"
+)
+
+func main() {
+        if len(os.Args) > 1 {
+                fmt.Printf("%v\n", os.Args[1])
+        }
+}
+```
