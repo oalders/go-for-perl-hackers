@@ -855,6 +855,29 @@ if foo > 1 {
 }
 ```
 
+#### elsif / else if
+
+#### Perl:
+
+```perl
+if ( $foo > 1 ) {
+    print 'bar';
+}
+elsif ( $foo < 10 ) {
+    print 'baz';
+}
+```
+
+#### Go:
+
+```go
+if foo > 1 {
+     fmt.Println("bar")
+} else if foo < 10 {
+     fmt.Println("baz")
+}
+```
+
 ### Loops
 
 #### For loops
