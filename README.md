@@ -622,6 +622,24 @@ func main() {
 
 See [tour.golang.org/moretypes/5](https://tour.golang.org/moretypes/5)
 
+##### Slices:
+
+#### Perl:
+
+```perl
+my @array = (0..5);
+my @slice = @list[2..4];
+```
+
+#### Go:
+
+```go
+array := [6]int{0,1,2,3,4,5}
+var slice []int = array[2:4]
+```
+
+Note that arrays in Go have a fixed size, whereas slices are dynamically sized.
+
 ### Dumping Data Structures
 
 #### To your terminal
