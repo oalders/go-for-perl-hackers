@@ -640,6 +640,27 @@ var slice []int = array[2:4]
 
 Note that arrays in Go have a fixed size, whereas slices are dynamically sized.
 
+Also:
+
+>A slice does not store any data, it just describes a section of an underlying array.
+>
+>Changing the elements of a slice modifies the corresponding elements of its underlying array.
+>
+>Other slices that share the same underlying array will see those changes.
+
+See [https://tour.golang.org/moretypes/8](https://tour.golang.org/moretypes/8)
+
+Note also that slices in Go can use defaults for lower and upper bounds.  That means that for the array of 11 integers `var a [10]int`, the following slices are equivalent:
+
+```go
+a[0:10]  // explicit lower to upper bound
+a[:10]   // use default lower bound (0)
+a[0:]    // use default upper bound (0)
+a[:]     // use default upper and lower bounds (0 and 10)
+```
+
+See [https://tour.golang.org/moretypes/10](https://tour.golang.org/moretypes/10)
+
 ### Dumping Data Structures
 
 #### To your terminal
