@@ -396,6 +396,15 @@ const hello = "Hello, world"
 const hello string = "Hello, World"
 ```
 
+Create multiple constants with one `const` declaration:
+
+```go
+const(
+    hello   = "Hello, world"
+    goodbye = "Goodbye!"
+)
+```
+
 Constants cannot be declared using the := syntax.
 
 ### Arrays
