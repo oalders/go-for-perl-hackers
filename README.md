@@ -608,49 +608,22 @@ func main() {
 }
 ```
 
-#### Appending to a List
+#### Slices:
 
-#### Perl:
-
-```perl
-my @list;
-push @list, 'foo';
-print $list[0];
-```
-
-#### Go:
-
-```go
-package main
-
-import (
-	"fmt"
-)
-
-func main() {
-   // Create an empty slice rather than creating an array
-	mySlice := make([]string, 0)
-	mySlice = append(mySlice, "foo")
-	fmt.Print(mySlice[0])
-}
-```
-
-See [tour.golang.org/moretypes/5](https://tour.golang.org/moretypes/5)
-
-##### Slices:
-
-#### Perl:
+##### Perl:
 
 ```perl
 my @array = (0..5);
 my @slice = @list[2..4];
 ```
 
-#### Go:
+##### Go:
 
 ```go
 array := [6]int{0,1,2,3,4,5}
 var slice []int = array[2:4]
+
+var nothing []string // create an empty slice
 ```
 
 Note that arrays in Go have a fixed size, whereas slices are dynamically sized.
@@ -665,7 +638,7 @@ Also:
 
 See [https://tour.golang.org/moretypes/8](https://tour.golang.org/moretypes/8)
 
-Note also that slices in Go can use defaults for lower and upper bounds.  That means that for the array of 11 integers `var a [10]int`, the following slices are equivalent:
+Note also that slices in Go can use defaults for lower and upper bounds.  That means that for the array of 10 integers `var a [10]int`, the following slices are equivalent:
 
 ```go
 a[0:10]  // explicit lower to upper bound
@@ -674,7 +647,27 @@ a[0:]    // use default upper bound (0)
 a[:]     // use default upper and lower bounds (0 and 10)
 ```
 
+Note that the lower bound is the starting point in the index (ie 0) and the *length* of the slice is the upper bound, which is why the entire slice consists of `a[0:10` and *not* `a[0:9]`.
+
+
 See [https://tour.golang.org/moretypes/10](https://tour.golang.org/moretypes/10)
+
+##### Appending Slices:
+
+```perl
+my @array = (0..5);
+my @slice = @list[2..4];
+push @slice, 11, 12;
+```
+
+Note that in Perl, a slice of an array is also an array, so there's no need to make a distinction between the two.
+
+
+```go
+array := [6]int{0,1,2,3,4,5}
+var slice []int = array[2:4]
+slice = append(slice, 11, 12)
+```
 
 ### Dumping Data Structures
 
