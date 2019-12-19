@@ -1006,9 +1006,12 @@ for {
     if foo == "bar" {
         continue
     }
+    // Won't get here if continue is called
 }
 
 ```
+
+Note that `continue` will immediately begin the next iteration of the innermost `for` loop.
 
 #### Terminating a loop
 
@@ -1029,9 +1032,12 @@ for {
     if foo == "bar" {
         break
     }
+    // Won't get here if break is called
 }
 
 ```
+
+Note that `break` will exit the enclosing loop at the point where it is called.
 
 ### Functions
 
