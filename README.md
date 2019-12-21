@@ -1217,3 +1217,19 @@ func main() {
         }
 }
 ```
+
+#### Exiting a script
+
+##### Perl:
+
+```perl
+exit(0);
+```
+
+##### Go:
+
+```go
+import("os")
+
+os.Exit(0)
+```
