@@ -237,6 +237,26 @@ my ($i, $j) = (1, 2);
 var i, j int = 1, 2
 ```
 
+##### Multiline strings
+
+##### Perl:
+```perl
+my $long_string = <<'EOF';
+my multiline
+string
+EOF
+```
+Use double quotes `<<"EOF";` if you need to interpolate variables.
+
+#### Go:
+
+```go
+longString := `
+my multiline
+string
+`
+```
+
 #### Boolean checks (true/false)
 
 #### Perl:
