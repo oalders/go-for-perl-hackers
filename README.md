@@ -226,6 +226,7 @@ my ($foo, $bar);
 
 ```go
 var foo, bar int
+var nothing []string // create an empty slice
 ```
 
 ##### Declare with explicit values
