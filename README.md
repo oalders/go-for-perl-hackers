@@ -377,11 +377,36 @@ $gopher = sprintf '%s%s', $foo, $bar;
 #### Go:
 
 ```go
-foo := "go"
-bar := "pher"
+package main
 
-gopher := foo + bar
-gopher := fmt.Sprintf("%s%s", foo, bar)
+import (
+    "fmt"
+    "strings"
+)
+
+func main() {
+    var gopher string
+
+    gopher = foo + bar
+    gopher = fmt.Sprintf("%s%s", foo, bar)
+}
+```
+
+```go
+package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func main() {
+    foo := "go"
+    bar := "pher"
+
+    gopher = strings.Join([]string{"go", "pher"}, "")
+    fmt.Println(gopher)
+}
 ```
 
 ```go
