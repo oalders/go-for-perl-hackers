@@ -144,12 +144,17 @@ t.Logf("We are open %d days per %s", 7, "week")
 #### Perl:
 
 ```perl
+$ENV{FOO} = 'bar';
+local $ENV{FOO} = 'bar'; # Same as above, but with local scope
+
 print "GOPATH: $ENV{GOPATH}\n";
 ```
 
 #### Go:
 
 ```go
+os.Setenv("FOO", "bar")
+
 fmt.Println("GOPATH: ", os.Getenv("GOPATH"))
 ```
 
