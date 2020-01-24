@@ -246,12 +246,14 @@ var i, j int = 1, 2
 ##### Multiline strings
 
 ##### Perl:
+
 ```perl
 my $long_string = <<'EOF';
 my multiline
 string
 EOF
 ```
+
 Use double quotes `<<"EOF";` if you need to interpolate variables.
 
 #### Go:
@@ -681,15 +683,15 @@ Note that arrays in Go have a fixed size, whereas slices are dynamically sized.
 
 Also:
 
->A slice does not store any data, it just describes a section of an underlying array.
+> A slice does not store any data, it just describes a section of an underlying array.
 >
->Changing the elements of a slice modifies the corresponding elements of its underlying array.
+> Changing the elements of a slice modifies the corresponding elements of its underlying array.
 >
->Other slices that share the same underlying array will see those changes.
+> Other slices that share the same underlying array will see those changes.
 
 See [https://tour.golang.org/moretypes/8](https://tour.golang.org/moretypes/8)
 
-Note also that slices in Go can use defaults for lower and upper bounds.  That means that for the array of 10 integers `var a [10]int`, the following slices are equivalent:
+Note also that slices in Go can use defaults for lower and upper bounds. That means that for the array of 10 integers `var a [10]int`, the following slices are equivalent:
 
 ```go
 a[0:10]  // explicit lower to upper bound
@@ -698,8 +700,7 @@ a[0:]    // use default upper bound (0)
 a[:]     // use default upper and lower bounds (0 and 10)
 ```
 
-Note that the lower bound is the starting point in the index (ie 0) and the *length* of the slice is the upper bound, which is why the entire slice consists of `a[0:10` and *not* `a[0:9]`.
-
+Note that the lower bound is the starting point in the index (ie 0) and the _length_ of the slice is the upper bound, which is why the entire slice consists of `a[0:10` and _not_ `a[0:9]`.
 
 See [https://tour.golang.org/moretypes/10](https://tour.golang.org/moretypes/10)
 
@@ -712,7 +713,6 @@ push @slice, 11, 12;
 ```
 
 Note that in Perl, a slice of an array is also an array, so there's no need to make a distinction between the two.
-
 
 ```go
 array := [6]int{0,1,2,3,4,5}
@@ -889,6 +889,7 @@ catch {
 ```
 
 #### Go:
+
 ```go
 package main
 
@@ -1153,7 +1154,7 @@ $ go test -v
 ```
 
 If you're using `vim-go`, use `:GoTest` either from your `foo.go` or
-`foo_test.go`.  (Note, you can also use `:GoAlternate` to toggle between the
+`foo_test.go`. (Note, you can also use `:GoAlternate` to toggle between the
 two files.)
 
 To test a subset of functions:
@@ -1163,7 +1164,7 @@ $ go test -run regexp
 ```
 
 If you're using `vim-go`, move your cursor to the name of the function you'd
-like to test.  Running `:GoTest` here will run the function you're currently
+like to test. Running `:GoTest` here will run the function you're currently
 in.
 
 ### Debugging
@@ -1224,6 +1225,7 @@ func main() {
 ### Changing URI Query Params
 
 ##### Go:
+
 ```go
 package main
 
