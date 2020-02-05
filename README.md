@@ -39,12 +39,12 @@
                 * [Declare with explicit values](#declare-with-explicit-values)
                     * [Perl:](#perl-9)
                     * [Go:](#go-9)
-                * [Multiline strings](#multiline-strings)
-                    * [Perl:](#perl-10)
-                    * [Go:](#go-10)
-                * [Boolean checks (true/false)](#boolean-checks-truefalse)
-                    * [Perl:](#perl-11)
-                    * [Go:](#go-11)
+            * [Multiline strings](#multiline-strings)
+                * [Perl:](#perl-10)
+                * [Go:](#go-10)
+            * [Boolean checks (true/false)](#boolean-checks-truefalse)
+                * [Perl:](#perl-11)
+                * [Go:](#go-11)
             * [Checking for (un)definedness](#checking-for-undefinedness)
                 * [Perl:](#perl-12)
                 * [Go:](#go-12)
@@ -57,7 +57,7 @@
             * [Constants](#constants)
                 * [Perl:](#perl-15)
                 * [Go:](#go-15)
-        * [Arrays](#arrays)
+        * [Lists](#lists)
             * [Create an Array](#create-an-array)
                 * [Perl:](#perl-16)
                 * [Go:](#go-16)
@@ -78,64 +78,66 @@
             * [Slices:](#slices)
                 * [Perl:](#perl-22)
                 * [Go:](#go-21)
-                * [Appending Slices:](#appending-slices)
-        * [Dumping Data Structures](#dumping-data-structures)
-            * [To your terminal](#to-your-terminal)
+            * [Appending Slices:](#appending-slices)
                 * [Perl:](#perl-23)
                 * [Go:](#go-22)
-            * [To disk (write)](#to-disk-write)
+        * [Dumping Data Structures](#dumping-data-structures)
+            * [To your terminal](#to-your-terminal)
                 * [Perl:](#perl-24)
                 * [Go:](#go-23)
-            * [To disk (append)](#to-disk-append)
+            * [To disk (write)](#to-disk-write)
                 * [Perl:](#perl-25)
                 * [Go:](#go-24)
-        * [File Operations](#file-operations)
-            * [Creating a directory](#creating-a-directory)
+            * [To disk (append)](#to-disk-append)
                 * [Perl:](#perl-26)
                 * [Go:](#go-25)
-        * [Flow Control](#flow-control)
-            * [if](#if)
+        * [File Operations](#file-operations)
+            * [Creating a directory](#creating-a-directory)
                 * [Perl:](#perl-27)
                 * [Go:](#go-26)
-            * [else](#else)
+        * [Flow Control](#flow-control)
+            * [if](#if)
                 * [Perl:](#perl-28)
                 * [Go:](#go-27)
-            * [elsif / else if](#elsif--else-if)
+            * [else](#else)
                 * [Perl:](#perl-29)
                 * [Go:](#go-28)
-        * [Loops](#loops)
-            * [For loops](#for-loops)
+            * [elsif / else if](#elsif--else-if)
                 * [Perl:](#perl-30)
                 * [Go:](#go-29)
-            * [While loops](#while-loops)
+        * [Loops](#loops)
+            * [For loops](#for-loops)
                 * [Perl:](#perl-31)
                 * [Go:](#go-30)
-            * [Infinite loops](#infinite-loops)
+            * [While loops](#while-loops)
                 * [Perl:](#perl-32)
                 * [Go:](#go-31)
+            * [Infinite loops](#infinite-loops)
+                * [Perl:](#perl-33)
+                * [Go:](#go-32)
             * [Short-circuiting a loop iteration](#short-circuiting-a-loop-iteration)
             * [Terminating a loop](#terminating-a-loop)
         * [Functions](#functions)
             * [Functions without signatures](#functions-without-signatures)
-                * [Perl:](#perl-33)
-                * [Go:](#go-32)
+                * [Perl:](#perl-34)
+                * [Go:](#go-33)
         * [Running Tests](#running-tests)
-            * [Perl:](#perl-34)
-            * [Go:](#go-33)
+            * [Perl:](#perl-35)
+            * [Go:](#go-34)
         * [Debugging](#debugging)
             * [Printing Stack Traces](#printing-stack-traces)
-                * [Perl:](#perl-35)
-                * [Go:](#go-34)
+                * [Perl:](#perl-36)
+                * [Go:](#go-35)
         * [Parsing URIs](#parsing-uris)
-            * [Perl:](#perl-36)
-            * [Go:](#go-35)
-        * [Changing URI Query Params](#changing-uri-query-params)
+            * [Perl:](#perl-37)
             * [Go:](#go-36)
+        * [Changing URI Query Params](#changing-uri-query-params)
+            * [Go:](#go-37)
         * [Command Line Scripts](#command-line-scripts)
             * [Print first argument to a script](#print-first-argument-to-a-script)
             * [Exiting a script](#exiting-a-script)
-                * [Perl:](#perl-37)
-                * [Go:](#go-37)
+                * [Perl:](#perl-38)
+                * [Go:](#go-38)
 
 <!-- vim-markdown-toc -->
 # go-for-perl-hackers
@@ -383,9 +385,9 @@ my ($i, $j) = (1, 2);
 var i, j int = 1, 2
 ```
 
-##### Multiline strings
+#### Multiline strings
 
-###### Perl:
+##### Perl:
 
 ```perl
 my $long_string = <<'EOF';
@@ -396,7 +398,7 @@ EOF
 
 Use double quotes `<<"EOF";` if you need to interpolate variables.
 
-###### Go:
+##### Go:
 
 ```go
 longString := `
@@ -405,9 +407,9 @@ string
 `
 ```
 
-##### Boolean checks (true/false)
+#### Boolean checks (true/false)
 
-###### Perl:
+##### Perl:
 
 ```perl
 my $success = 1;    # true
@@ -425,7 +427,7 @@ if ( !$success ) {
 
 ```
 
-###### Go:
+##### Go:
 
 ```go
 var success bool
@@ -600,7 +602,7 @@ const(
 
 Constants cannot be declared using the := syntax.
 
-### Arrays
+### Lists
 
 #### Create an Array
 
@@ -844,8 +846,9 @@ Note that the lower bound is the starting point in the index (ie 0) and the _len
 
 See [https://tour.golang.org/moretypes/10](https://tour.golang.org/moretypes/10)
 
-##### Appending Slices:
+#### Appending Slices:
 
+##### Perl:
 ```perl
 my @array = (0..5);
 my @slice = @list[2..4];
@@ -853,6 +856,8 @@ push @slice, 11, 12;
 ```
 
 Note that in Perl, a slice of an array is also an array, so there's no need to make a distinction between the two.
+
+##### Go:
 
 ```go
 array := [6]int{0,1,2,3,4,5}
