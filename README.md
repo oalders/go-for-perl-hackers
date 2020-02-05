@@ -1,3 +1,143 @@
+
+<!-- vim-markdown-toc GFM -->
+
+* [go-for-perl-hackers](#go-for-perl-hackers)
+    * [Your editor](#your-editor)
+        * [vim](#vim)
+            * [shortcuts](#shortcuts)
+    * [Go vs Perl](#go-vs-perl)
+        * [Comments](#comments)
+            * [Perl:](#perl)
+            * [Go:](#go)
+        * [Print](#print)
+            * [Printing strings](#printing-strings)
+                * [Perl:](#perl-1)
+                * [Go:](#go-1)
+            * [Formatted print statements.](#formatted-print-statements)
+                * [Perl:](#perl-2)
+                * [Go:](#go-2)
+            * [Printing from within a test](#printing-from-within-a-test)
+                * [Perl:](#perl-3)
+                * [Go:](#go-3)
+        * [Variables](#variables)
+            * [Environment Variables](#environment-variables)
+                * [Perl:](#perl-4)
+                * [Go:](#go-4)
+            * [Variable Assignment](#variable-assignment)
+                * [Perl:](#perl-5)
+                * [Go:](#go-5)
+            * [Instantiate multiple variables at once](#instantiate-multiple-variables-at-once)
+                * [Perl:](#perl-6)
+                * [Go:](#go-6)
+            * [Double vs Single Quotes](#double-vs-single-quotes)
+                * [Perl:](#perl-7)
+                * [Go:](#go-7)
+            * [Multiple Variables](#multiple-variables)
+                * [Declare without explicit values](#declare-without-explicit-values)
+                    * [Perl:](#perl-8)
+                    * [Go:](#go-8)
+                * [Declare with explicit values](#declare-with-explicit-values)
+                    * [Perl:](#perl-9)
+                    * [Go:](#go-9)
+                * [Multiline strings](#multiline-strings)
+                    * [Perl:](#perl-10)
+                    * [Go:](#go-10)
+                * [Boolean checks (true/false)](#boolean-checks-truefalse)
+                    * [Perl:](#perl-11)
+                    * [Go:](#go-11)
+            * [Checking for (un)definedness](#checking-for-undefinedness)
+                * [Perl:](#perl-12)
+                * [Go:](#go-12)
+            * [Incrementing and Decrementing Integer](#incrementing-and-decrementing-integer)
+                * [Perl:](#perl-13)
+                * [Go:](#go-13)
+            * [String Concatenation](#string-concatenation)
+                * [Perl:](#perl-14)
+                * [Go:](#go-14)
+            * [Constants](#constants)
+                * [Perl:](#perl-15)
+                * [Go:](#go-15)
+        * [Arrays](#arrays)
+            * [Create an Array](#create-an-array)
+                * [Perl:](#perl-16)
+                * [Go:](#go-16)
+            * [Size of an array:](#size-of-an-array)
+                * [Perl:](#perl-17)
+            * [Hashes / Structs](#hashes--structs)
+                * [Perl:](#perl-18)
+                * [Go:](#go-17)
+            * [Iterating Over a List](#iterating-over-a-list)
+                * [Perl:](#perl-19)
+                * [Go:](#go-18)
+            * [Iterating Over a Hash/Map](#iterating-over-a-hashmap)
+                * [Perl:](#perl-20)
+                * [Go:](#go-19)
+            * [Checking if a Hash/Map Key Exists](#checking-if-a-hashmap-key-exists)
+                * [Perl:](#perl-21)
+                * [Go:](#go-20)
+            * [Slices:](#slices)
+                * [Perl:](#perl-22)
+                * [Go:](#go-21)
+                * [Appending Slices:](#appending-slices)
+        * [Dumping Data Structures](#dumping-data-structures)
+            * [To your terminal](#to-your-terminal)
+                * [Perl:](#perl-23)
+                * [Go:](#go-22)
+            * [To disk (write)](#to-disk-write)
+                * [Perl:](#perl-24)
+                * [Go:](#go-23)
+            * [To disk (append)](#to-disk-append)
+                * [Perl:](#perl-25)
+                * [Go:](#go-24)
+        * [File Operations](#file-operations)
+            * [Creating a directory](#creating-a-directory)
+                * [Perl:](#perl-26)
+                * [Go:](#go-25)
+        * [Flow Control](#flow-control)
+            * [if](#if)
+                * [Perl:](#perl-27)
+                * [Go:](#go-26)
+            * [else](#else)
+                * [Perl:](#perl-28)
+                * [Go:](#go-27)
+            * [elsif / else if](#elsif--else-if)
+                * [Perl:](#perl-29)
+                * [Go:](#go-28)
+        * [Loops](#loops)
+            * [For loops](#for-loops)
+                * [Perl:](#perl-30)
+                * [Go:](#go-29)
+            * [While loops](#while-loops)
+                * [Perl:](#perl-31)
+                * [Go:](#go-30)
+            * [Infinite loops](#infinite-loops)
+                * [Perl:](#perl-32)
+                * [Go:](#go-31)
+            * [Short-circuiting a loop iteration](#short-circuiting-a-loop-iteration)
+            * [Terminating a loop](#terminating-a-loop)
+        * [Functions](#functions)
+            * [Functions without signatures](#functions-without-signatures)
+                * [Perl:](#perl-33)
+                * [Go:](#go-32)
+        * [Running Tests](#running-tests)
+            * [Perl:](#perl-34)
+            * [Go:](#go-33)
+        * [Debugging](#debugging)
+            * [Printing Stack Traces](#printing-stack-traces)
+                * [Perl:](#perl-35)
+                * [Go:](#go-34)
+        * [Parsing URIs](#parsing-uris)
+            * [Perl:](#perl-36)
+            * [Go:](#go-35)
+        * [Changing URI Query Params](#changing-uri-query-params)
+            * [Go:](#go-36)
+        * [Command Line Scripts](#command-line-scripts)
+            * [Print first argument to a script](#print-first-argument-to-a-script)
+            * [Exiting a script](#exiting-a-script)
+                * [Perl:](#perl-37)
+                * [Go:](#go-37)
+
+<!-- vim-markdown-toc -->
 # go-for-perl-hackers
 
 The primary aim of this cheat sheet is to help Perl programmers get up and running with Go.
@@ -81,13 +221,13 @@ Multi-line (C-Style)
 
 #### Printing strings
 
-#### Perl:
+##### Perl:
 
 ```perl
 print 'hello, world';
 ```
 
-#### Go:
+##### Go:
 
 ```
 package main
@@ -101,13 +241,13 @@ func main () {
 
 #### Formatted print statements.
 
-#### Perl:
+##### Perl:
 
 ```perl
 printf('We are open %i days per %s', 7, 'week');
 ```
 
-#### Go:
+##### Go:
 
 ```go
 package main
@@ -124,13 +264,13 @@ See [golang.org/pkg/fmt/](https://golang.org/pkg/fmt/)
 
 #### Printing from within a test
 
-#### Perl:
+##### Perl:
 
 ```perl
 diag 'foo happens';
 ```
 
-#### Go:
+##### Go:
 
 ```go
 t.Log("foo happens")
@@ -141,7 +281,7 @@ t.Logf("We are open %d days per %s", 7, "week")
 
 #### Environment Variables
 
-#### Perl:
+##### Perl:
 
 ```perl
 $ENV{FOO} = 'bar';
@@ -150,7 +290,7 @@ local $ENV{FOO} = 'bar'; # Same as above, but with local scope
 print "GOPATH: $ENV{GOPATH}\n";
 ```
 
-#### Go:
+##### Go:
 
 ```go
 os.Setenv("FOO", "bar")
@@ -160,14 +300,14 @@ fmt.Println("GOPATH: ", os.Getenv("GOPATH"))
 
 #### Variable Assignment
 
-#### Perl:
+##### Perl:
 
 ```perl
 my $foo = 'bar';
 my $pi = 3.14;
 ```
 
-#### Go:
+##### Go:
 
 ```go
 // the following assignments are equivalent
@@ -180,30 +320,30 @@ pi := 3.14             // implicit cast as float64
 pi := "3.14"           // implicit cast as string
 ```
 
-##### Instantiate multiple variables at once
+#### Instantiate multiple variables at once
 
-#### Perl:
+##### Perl:
 
 ```perl
 my ($one, $two, $three);
 ```
 
-#### Go:
+##### Go:
 
 ```go
 var one, two, three string
 ```
 
-##### Double vs Single Quotes
+#### Double vs Single Quotes
 
-#### Perl:
+##### Perl:
 
 ```perl
 my $foo = 'bar'; // no variable interpolation
 my $bar = "$foo baz"; // allow for variable interpolation
 ```
 
-#### Go:
+##### Go:
 
 ```go
 foo := "本" // implicitly cast as a string
@@ -212,17 +352,17 @@ foo := '本' // implicitly cast as a rune
 
 See [golang.org/ref/spec#Rune_literals](https://golang.org/ref/spec#Rune_literals)
 
-##### Multiple Variables
+#### Multiple Variables
 
 ##### Declare without explicit values
 
-#### Perl:
+###### Perl:
 
 ```perl
 my ($foo, $bar);
 ```
 
-#### Go:
+###### Go:
 
 ```go
 var foo, bar int
@@ -231,13 +371,13 @@ var nothing []string // create an empty slice
 
 ##### Declare with explicit values
 
-#### Perl:
+###### Perl:
 
 ```perl
 my ($i, $j) = (1, 2);
 ```
 
-#### Go:
+###### Go:
 
 ```go
 var i, j int = 1, 2
@@ -245,7 +385,7 @@ var i, j int = 1, 2
 
 ##### Multiline strings
 
-##### Perl:
+###### Perl:
 
 ```perl
 my $long_string = <<'EOF';
@@ -256,7 +396,7 @@ EOF
 
 Use double quotes `<<"EOF";` if you need to interpolate variables.
 
-#### Go:
+###### Go:
 
 ```go
 longString := `
@@ -265,9 +405,9 @@ string
 `
 ```
 
-#### Boolean checks (true/false)
+##### Boolean checks (true/false)
 
-#### Perl:
+###### Perl:
 
 ```perl
 my $success = 1;    # true
@@ -285,7 +425,7 @@ if ( !$success ) {
 
 ```
 
-#### Go:
+###### Go:
 
 ```go
 var success bool
@@ -312,7 +452,7 @@ if !success {
 
 #### Checking for (un)definedness
 
-#### Perl:
+##### Perl:
 
 ```perl
 my $foo;
@@ -321,7 +461,7 @@ if ( ! defined $foo ) {
 }
 ```
 
-#### Go:
+##### Go:
 
 ```go
 var myString string
@@ -340,7 +480,7 @@ if mySlice == nil {
 
 #### Incrementing and Decrementing Integer
 
-#### Perl:
+##### Perl:
 
 See [https://perldoc.perl.org/perlop.html#Auto-increment-and-Auto-decrement](https://perldoc.perl.org/perlop.html#Auto-increment-and-Auto-decrement)
 
@@ -354,7 +494,7 @@ print $i--;  # prints 0
 print --$j;  # prints -1
 ```
 
-#### Go:
+##### Go:
 
 ```go
 counter := 1
@@ -364,7 +504,7 @@ counter--
 
 #### String Concatenation
 
-#### Perl:
+##### Perl:
 
 ```perl
 my $foo = 'go';
@@ -376,7 +516,7 @@ $gopher = join q{}, $foo, $bar;
 $gopher = sprintf '%s%s', $foo, $bar;
 ```
 
-#### Go:
+##### Go:
 
 ```go
 package main
@@ -430,16 +570,16 @@ func main() {
 }
 ```
 
-### Constants
+#### Constants
 
-#### Perl:
+##### Perl:
 
 ```perl
 use Const::Fast;
 const my $hello => 'Hello, world';
 ```
 
-#### Go:
+##### Go:
 
 ```go
 // Create an *untyped* string constant
@@ -464,14 +604,14 @@ Constants cannot be declared using the := syntax.
 
 #### Create an Array
 
-#### Perl:
+##### Perl:
 
 ```perl
 my @foo = (1..3);
 my $first = $foo[0];
 ```
 
-#### Go:
+##### Go:
 
 ```go
 foo := [3]int{1,2,3}
@@ -486,7 +626,7 @@ var bar [5]int \\ creates an array of [0,0,0,0,0]
 
 #### Size of an array:
 
-#### Perl:
+##### Perl:
 
 ```perl
 my $size = @array;
@@ -498,9 +638,9 @@ Go
 size := len(array)
 ```
 
-### Hashes / Structs
+#### Hashes / Structs
 
-#### Perl:
+##### Perl:
 
 ```perl
 use Data::Printer; # exports p()
@@ -523,7 +663,7 @@ p %foo;
 delete $foo{X};
 ```
 
-#### Go:
+##### Go:
 
 ```go
 package main
@@ -552,7 +692,7 @@ func main() {
 
 #### Iterating Over a List
 
-#### Perl:
+##### Perl:
 
 ```perl
 my @foo = ('foo', 'bar', 'baz');
@@ -580,7 +720,7 @@ for my $i (0..$#foo) {
 
 ```
 
-#### Go:
+##### Go:
 
 ```go
 package main
@@ -601,7 +741,7 @@ func main() {
 
 #### Iterating Over a Hash/Map
 
-#### Perl:
+##### Perl:
 
 ```perl
 my %hash = ( key_1 => 'foo', key_2 => 'bar', );
@@ -631,7 +771,7 @@ func main() {
 
 #### Checking if a Hash/Map Key Exists
 
-#### Perl:
+##### Perl:
 
 ```perl
 
@@ -642,7 +782,7 @@ if ( exists $foo{home} ) {
 
 ```
 
-#### Go:
+##### Go:
 
 [https://stackoverflow.com/a/2050629/406224](https://stackoverflow.com/a/2050629/406224)
 
@@ -724,7 +864,7 @@ slice = append(slice, 11, 12)
 
 #### To your terminal
 
-#### Perl:
+##### Perl:
 
 ```perl
 use strict;
@@ -741,7 +881,7 @@ p( %foo );
 say np( %foo );
 ```
 
-#### Go:
+##### Go:
 
 ```go
 package main
@@ -787,7 +927,7 @@ func main() {
 
 #### To disk (write)
 
-#### Perl:
+##### Perl:
 
 ```perl
 use Data::Printer; # exports np()
@@ -797,7 +937,7 @@ my @list = ( 1..3 );
 path('/tmp/foo.txt')->spew( np( @list ) );
 ```
 
-#### Go:
+##### Go:
 
 ```go
 package main
@@ -829,7 +969,7 @@ func main() {
 
 #### To disk (append)
 
-#### Perl:
+##### Perl:
 
 ```perl
 use Data::Printer; # exports np()
@@ -839,7 +979,7 @@ my @list = ( 1..3 );
 path('/tmp/foo.txt')->append( np( @list ) );
 ```
 
-#### Go:
+##### Go:
 
 ```go
 package main
@@ -873,7 +1013,7 @@ func main() {
 
 #### Creating a directory
 
-#### Perl:
+##### Perl:
 
 ```perl
 use Path::Tiny qw( path );
@@ -888,7 +1028,7 @@ catch {
 };
 ```
 
-#### Go:
+##### Go:
 
 ```go
 package main
@@ -910,7 +1050,7 @@ func main() {
 
 #### if
 
-#### Perl:
+##### Perl:
 
 ```perl
 if ( $foo > 1 ) {
@@ -918,7 +1058,7 @@ if ( $foo > 1 ) {
 }
 ```
 
-#### Go:
+##### Go:
 
 ```go
 if ( foo > 1 ) {
@@ -933,7 +1073,7 @@ if foo > 1 {
 
 #### else
 
-#### Perl:
+##### Perl:
 
 ```perl
 if ( $foo > 1 ) {
@@ -944,7 +1084,7 @@ else {
 }
 ```
 
-#### Go:
+##### Go:
 
 ```go
 if foo > 1 {
@@ -956,7 +1096,7 @@ if foo > 1 {
 
 #### elsif / else if
 
-#### Perl:
+##### Perl:
 
 ```perl
 if ( $foo > 1 ) {
@@ -967,7 +1107,7 @@ elsif ( $foo < 10 ) {
 }
 ```
 
-#### Go:
+##### Go:
 
 ```go
 if foo > 1 {
@@ -981,7 +1121,7 @@ if foo > 1 {
 
 #### For loops
 
-#### Perl:
+##### Perl:
 
 ```perl
 my $sum;
@@ -990,7 +1130,7 @@ for ( my $i = 0 ; $i < 10 ; $i++ ) {
 }
 ```
 
-#### Go:
+##### Go:
 
 ```go
 sum := 0
@@ -1001,7 +1141,7 @@ for i := 0; i < 10; i++ {
 
 #### While loops
 
-#### Perl:
+##### Perl:
 
 ```perl
 my $sum = 0;
@@ -1011,7 +1151,7 @@ while ( $i < 10 ) {
 }
 ```
 
-#### Go:
+##### Go:
 
 ```go
 // The init and post statement in a Go for loop are optional.
@@ -1025,14 +1165,14 @@ for i < 10 {
 
 #### Infinite loops
 
-#### Perl:
+##### Perl:
 
 ```perl
 while (1) {
 }
 ```
 
-#### Go:
+##### Go:
 
 ```go
 for {
@@ -1095,7 +1235,7 @@ Note that `break` will exit the enclosing loop at the point where it is called.
 
 #### Functions without signatures
 
-#### Perl:
+##### Perl:
 
 ```perl
 sub foo {
@@ -1104,7 +1244,7 @@ sub foo {
 foo();
 ```
 
-#### Go:
+##### Go:
 
 ```go
 package main
@@ -1194,7 +1334,7 @@ func main() {
 
 ### Parsing URIs
 
-##### Perl:
+#### Perl:
 
 ```perl
 use Mojo::URL ();
@@ -1202,7 +1342,7 @@ my $url = Mojo::URL->new('https://www.google.com/search?q=schitt%27s+creek');
 print $url->query->param('q'); # schitt's creek
 ```
 
-##### Go:
+#### Go:
 
 ```go
 
@@ -1224,7 +1364,7 @@ func main() {
 
 ### Changing URI Query Params
 
-##### Go:
+#### Go:
 
 ```go
 package main
