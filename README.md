@@ -69,6 +69,7 @@
             * [Iterating Over a List](#iterating-over-a-list)
                 * [Perl:](#perl-19)
                 * [Go:](#go-18)
+            * [Splitting a string](#splitting-a-string)
             * [Iterating Over a Hash/Map](#iterating-over-a-hashmap)
                 * [Perl:](#perl-20)
                 * [Go:](#go-19)
@@ -739,6 +740,22 @@ func main() {
 	}
 }
 
+```
+
+#### Splitting a string
+
+```perl
+my @list = split ',', 'a,b,c'
+```
+
+```go
+package main
+
+import (
+	"strings"
+)
+
+mySlice := strings.Split("a,b,c", ",")
 ```
 
 #### Iterating Over a Hash/Map
