@@ -170,9 +170,6 @@ call pathogen#infect()
 
 Now, open `vim` after installing `vim-go` and enter `:GoInstallBinaries`
 
-Now you can take advantage of `:GoRename` when refactoring code and `:GoTest`
-in order to test your code without leaving your `vim` session.
-
 Also, you can add `goimports`:
 
 First install it: `go get golang.org/x/tools/cmd/goimports`
@@ -181,7 +178,7 @@ Then add the following to your `.vimrc`
 
 `let g:go_fmt_command = "goimports"`
 
-Lastly, if your editor is set up to display tabs, you may want to disable that for Go files.
+If your editor is set up to display tabs visually, you may want to disable that for Go files.
 
 ```
 autocmd FileType go setlocal nolist
@@ -191,6 +188,90 @@ autocmd FileType go setlocal nolist
 
 `daf` in `vim` will now allow you to cut an entire function without first
 needing to select it.
+
+#### vim-go commands
+
+##### :GoBuild
+
+`go build`
+
+##### :GoRun
+
+`go run`
+
+##### :GoGenerate
+
+`go generate`
+
+##### :GoRename
+
+Call this when your cursor is over something you'd like to rename, and it will be renamed in all of the appropriate locations.
+
+##### :GoTest
+
+Run this in order to test your code without leaving your `vim` session.
+
+##### :GoTestFunc
+
+Run this when inside a test function and only this test function will be run.  Equivalent of `go test -run MyFunctionName`.
+
+##### :GoAlternate
+
+Toggles file between `foo.go` and `foo_test.go`
+
+##### :GoDef
+
+Takes you to the location where an item is defined.  Keep running this to move further up the stack.
+
+##### :GoDefPop
+
+Pops the stack which you created with `:GoDef`, taking you back to the previous location(s) you called `:GoDef` from.
+
+##### :GoDecls
+
+See functions which are declared in the current file.
+
+##### :GoDeclsDir
+
+Like `:GoDecls` but finds all the functions declared in the directory of the file you're editing.
+
+##### :GoReferrers
+
+Find other places where a function or variable is being invoked.
+
+##### :GoDoc
+
+Look up docs for a function.
+
+##### :GoInfo
+
+Get a function's input and output parameters.
+
+##### :GoDescribe
+
+Like `:GoInfo`, but with more info.
+
+##### :GoFiles
+
+List all files in package.
+
+##### :GoDeps
+
+List dependencies.
+
+##### :GoWhicherrs
+
+Get info on what sorts of errors an `err` variable may contain.
+
+##### :GoCallers
+
+Find out where a function callers are.
+
+##### :GoImpl
+
+Generate stub methods required by an interface.
+
+##### :GoFreevars
 
 ## Go vs Perl
 
@@ -835,7 +916,8 @@ my @slice = @list[2..4];
 array := [6]int{0,1,2,3,4,5}
 var slice []int = array[2:4]
 
-var nothing []string // create an empty slice
+var myslice []int    // create an empty slice of integers
+var nothing []string // create an empty slice of strings
 ```
 
 Note that arrays in Go have a fixed size, whereas slices are dynamically sized.
