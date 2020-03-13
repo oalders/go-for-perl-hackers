@@ -1139,6 +1139,59 @@ func main() {
 }
 ```
 
+#### Read First Line of a File
+
+##### Perl:
+
+In the Perl example, we'll chomp the line to make explicit that newlines need to be handled.
+
+```perl
+use Path::Tiny qw( path );
+
+my $first_line;
+my $fh = path('/path/to/file')->openr_utf8;
+
+while (my $line = <$fh>) {
+    $first_line = $line;
+    chomp $first_line;
+    last;
+}
+
+print $first_line, "\n";
+```
+
+##### Go:
+
+`scanner.Scan()` helpfully trims newlines for us.
+
+```go
+import(
+    "fmt"
+    "log"
+)
+
+func main() {
+    file, err := os.Open("/path/to/file")
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer file.Close()
+
+    scanner := bufio.NewScanner(file)
+
+    var firstLine string
+    for scanner.Scan() {
+        firstLine = scanner.Text()
+        break
+    }
+    if err := scanner.Err(); err != nil {
+        log.Fatal(err)
+    }
+
+    fmt.Println(firstLine)
+}
+```
+
 ### Flow Control
 
 #### if
