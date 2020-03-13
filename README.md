@@ -389,6 +389,7 @@ fmt.Println("GOPATH: ", os.Getenv("GOPATH"))
 ```perl
 my $foo = 'bar';
 my $pi = 3.14;
+my $no_assignment;
 ```
 
 ##### Go:
@@ -402,36 +403,8 @@ var pi float32 = 3.14  // explicit cast as float32
 pi := float32(3.14)    // explicit cast as float32
 pi := 3.14             // implicit cast as float64
 pi := "3.14"           // implicit cast as string
-```
 
-#### Instantiate multiple variables at once
-
-##### Perl:
-
-```perl
-my ($one, $two, $three);
-```
-
-##### Go:
-
-```go
-var one, two, three string
-```
-
-#### Double vs Single Quotes
-
-##### Perl:
-
-```perl
-my $foo = 'bar'; // no variable interpolation
-my $bar = "$foo baz"; // allow for variable interpolation
-```
-
-##### Go:
-
-```go
-foo := "本" // implicitly cast as a string
-foo := '本' // implicitly cast as a rune
+var noAssignment string // equivalent to: noAssignment := ""
 ```
 
 See [golang.org/ref/spec#Rune_literals](https://golang.org/ref/spec#Rune_literals)
@@ -465,6 +438,22 @@ my ($i, $j) = (1, 2);
 
 ```go
 var i, j int = 1, 2
+```
+
+#### Double vs Single Quotes
+
+##### Perl:
+
+```perl
+my $foo = 'bar'; // no variable interpolation
+my $bar = "$foo baz"; // allow for variable interpolation
+```
+
+##### Go:
+
+```go
+foo := "本" // implicitly cast as a string
+foo := '本' // implicitly cast as a rune
 ```
 
 #### Multiline strings
