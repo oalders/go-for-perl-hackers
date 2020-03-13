@@ -1139,6 +1139,29 @@ func main() {
 }
 ```
 
+#### Read an Entire File
+
+##### Perl:
+
+```perl
+use Path::Tiny qw( path );
+
+my $content = path('path', 'to', 'file')->slurp_utf8;
+```
+
+##### Go:
+
+Note that in this case `content` is `[]byte`
+
+```go
+    content, err := ioutil.ReadFile(
+        filepath.Join("path", "to", "file")
+    )
+    if err != nil {
+        log.Fatal(err)
+    }
+```
+
 #### Read First Line of a File
 
 ##### Perl:
