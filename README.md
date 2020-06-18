@@ -1501,6 +1501,12 @@ If you're using `vim-go`, move your cursor to the name of the function you'd
 like to test. Running `:GoTest` here will run the function you're currently
 in.
 
+To bypass Go's test caching:
+
+```go
+$ go test -count=1
+```
+
 ### Debugging
 
 #### Printing Stack Traces
