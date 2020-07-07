@@ -1185,6 +1185,9 @@ Note that in this case `content` is `[]byte`
     if err != nil {
         log.Fatal(err)
     }
+
+    // convert byte array to string
+    contentAsString := string(content[:])
 ```
 
 #### Read First Line of a File
