@@ -96,75 +96,78 @@
       * [Checking if a Hash/Map Key Exists](#checking-if-a-hashmap-key-exists)
         * [Perl:](#perl-20)
         * [Go:](#go-20)
-      * [Slices:](#slices)
+      * [Deleting a Hash/Map Key](#deleting-a-hashmap-key)
         * [Perl:](#perl-21)
         * [Go:](#go-21)
-      * [Appending Slices:](#appending-slices)
+      * [Slices:](#slices)
         * [Perl:](#perl-22)
         * [Go:](#go-22)
-    * [Dumping Data Structures](#dumping-data-structures)
-      * [To your terminal](#to-your-terminal)
+      * [Appending Slices:](#appending-slices)
         * [Perl:](#perl-23)
         * [Go:](#go-23)
-      * [To disk (write)](#to-disk-write)
+    * [Dumping Data Structures](#dumping-data-structures)
+      * [To your terminal](#to-your-terminal)
         * [Perl:](#perl-24)
         * [Go:](#go-24)
-      * [To disk (append)](#to-disk-append)
+      * [To disk (write)](#to-disk-write)
         * [Perl:](#perl-25)
         * [Go:](#go-25)
-    * [File Operations](#file-operations)
-      * [Creating a directory](#creating-a-directory)
+      * [To disk (append)](#to-disk-append)
         * [Perl:](#perl-26)
         * [Go:](#go-26)
-      * [Read an Entire File](#read-an-entire-file)
+    * [File Operations](#file-operations)
+      * [Creating a directory](#creating-a-directory)
         * [Perl:](#perl-27)
         * [Go:](#go-27)
-      * [Read First Line of a File](#read-first-line-of-a-file)
+      * [Read an Entire File](#read-an-entire-file)
         * [Perl:](#perl-28)
         * [Go:](#go-28)
-    * [Flow Control](#flow-control)
-      * [if](#if)
+      * [Read First Line of a File](#read-first-line-of-a-file)
         * [Perl:](#perl-29)
         * [Go:](#go-29)
-      * [else](#else)
+    * [Flow Control](#flow-control)
+      * [if](#if)
         * [Perl:](#perl-30)
         * [Go:](#go-30)
-      * [elsif / else if](#elsif--else-if)
+      * [else](#else)
         * [Perl:](#perl-31)
         * [Go:](#go-31)
-    * [Loops](#loops)
-      * [For loops](#for-loops)
+      * [elsif / else if](#elsif--else-if)
         * [Perl:](#perl-32)
         * [Go:](#go-32)
-      * [While loops](#while-loops)
+    * [Loops](#loops)
+      * [For loops](#for-loops)
         * [Perl:](#perl-33)
         * [Go:](#go-33)
-      * [Infinite loops](#infinite-loops)
+      * [While loops](#while-loops)
         * [Perl:](#perl-34)
         * [Go:](#go-34)
+      * [Infinite loops](#infinite-loops)
+        * [Perl:](#perl-35)
+        * [Go:](#go-35)
       * [Short-circuiting a loop iteration](#short-circuiting-a-loop-iteration)
       * [Terminating a loop](#terminating-a-loop)
     * [Functions](#functions)
       * [Functions without signatures](#functions-without-signatures)
-        * [Perl:](#perl-35)
-        * [Go:](#go-35)
+        * [Perl:](#perl-36)
+        * [Go:](#go-36)
     * [Running Tests](#running-tests)
-      * [Perl:](#perl-36)
-      * [Go:](#go-36)
+      * [Perl:](#perl-37)
+      * [Go:](#go-37)
     * [Debugging](#debugging)
       * [Printing Stack Traces](#printing-stack-traces)
-        * [Perl:](#perl-37)
-        * [Go:](#go-37)
+        * [Perl:](#perl-38)
+        * [Go:](#go-38)
     * [Parsing URIs](#parsing-uris)
-      * [Perl:](#perl-38)
-      * [Go:](#go-38)
-    * [Changing URI Query Params](#changing-uri-query-params)
+      * [Perl:](#perl-39)
       * [Go:](#go-39)
+    * [Changing URI Query Params](#changing-uri-query-params)
+      * [Go:](#go-40)
     * [Command Line Scripts](#command-line-scripts)
       * [Print first argument to a script](#print-first-argument-to-a-script)
       * [Exiting a script](#exiting-a-script)
-        * [Perl:](#perl-39)
-        * [Go:](#go-40)
+        * [Perl:](#perl-40)
+        * [Go:](#go-41)
 
 <!-- vim-markdown-toc -->
 # go-for-perl-hackers
@@ -916,6 +919,30 @@ func main() {
 }
 ```
 
+#### Deleting a Hash/Map Key
+
+##### Perl:
+
+```perl
+
+my %pages = ( home => 'https://metacpan.org' );
+delete $pages{home};
+```
+
+##### Go:
+
+```go
+
+package main
+
+import "fmt"
+
+func main() {
+	pages := make(map[string]string)
+	pages["home"] = "https://metacpan.org"
+  delete(pages, "home")
+}
+```
 #### Slices:
 
 ##### Perl:
