@@ -161,16 +161,19 @@
       * [Printing Stack Traces](#printing-stack-traces)
         * [Perl:](#perl-39)
         * [Go:](#go-39)
-    * [Parsing URIs](#parsing-uris)
+    * [Sleep](#sleep)
       * [Perl:](#perl-40)
       * [Go:](#go-40)
-    * [Changing URI Query Params](#changing-uri-query-params)
+    * [Parsing URIs](#parsing-uris)
+      * [Perl:](#perl-41)
       * [Go:](#go-41)
+    * [Changing URI Query Params](#changing-uri-query-params)
+      * [Go:](#go-42)
     * [Command Line Scripts](#command-line-scripts)
       * [Print first argument to a script](#print-first-argument-to-a-script)
       * [Exiting a script](#exiting-a-script)
-        * [Perl:](#perl-41)
-        * [Go:](#go-42)
+        * [Perl:](#perl-42)
+        * [Go:](#go-43)
 
 <!-- vim-markdown-toc -->
 # go-for-perl-hackers
@@ -1588,6 +1591,28 @@ import (
 
 func main() {
 	debug.PrintStack()
+}
+```
+
+### Sleep
+
+#### Perl:
+
+```perl
+sleep 60;
+```
+
+#### Go:
+
+```go
+package main
+
+import (
+    "time"
+)
+
+func main() {
+    time.Sleep(60 * time.Second)
 }
 ```
 
