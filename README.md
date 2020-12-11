@@ -1238,9 +1238,8 @@ my $content = path('path', 'to', 'file')->slurp_utf8;
 Note that in this case `content` is `[]byte`
 
 ```go
-    content, err := ioutil.ReadFile(
-        filepath.Join("path", "to", "file")
-    )
+    content, err := ioutil.ReadFile(filepath.Join("path", "to", "file"))
+
     if err != nil {
         log.Fatal(err)
     }
