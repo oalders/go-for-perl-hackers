@@ -1687,7 +1687,6 @@ import (
 func main() {
 	url, _ := url.Parse("https://example.com")
 
-	// Begin searches at today's date
 	q := url.Query()
 	q.Set("activity", "dance")
 	q.Set("type", "flash")
