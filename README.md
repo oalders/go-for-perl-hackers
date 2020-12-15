@@ -1486,6 +1486,33 @@ for {
 
 Note that `break` will exit the enclosing loop at the point where it is called.
 
+### Today's Date as YYYY-MM-DD
+
+##### Perl
+
+```perl
+use DateTime ();
+print DateTime->now->ymd;
+```
+
+#### Go
+
+[https://play.golang.org/p/k0ijssDDOU6](https://play.golang.org/p/k0ijssDDOU6)
+
+```go
+package main
+ 
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    fmt.Println(time.Now().Format("2006-01-02"))
+}
+```
+
+
 ### Functions
 
 #### Functions without signatures
