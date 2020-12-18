@@ -729,7 +729,7 @@ first := foo[0]
 Note that creating an empty array in Go means that it will be populated by the type's default values:
 
 ```go
-var bar [5]int \\ creates an array of [0,0,0,0,0]
+var bar [5]int // creates an array of [0,0,0,0,0]
 ```
 
 #### Size of an array:
