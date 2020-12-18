@@ -480,8 +480,8 @@ var i, j int = 1, 2
 ##### Perl:
 
 ```perl
-my $foo = 'bar'; // no variable interpolation
-my $bar = "$foo baz"; // allow for variable interpolation
+my $foo = 'bar';      # no variable interpolation
+my $bar = "$foo baz"; # allow for variable interpolation
 ```
 
 ##### Go:
