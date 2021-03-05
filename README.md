@@ -773,6 +773,9 @@ delete $foo{X};
 
 ##### Go:
 
+[https://play.golang.org/p/wyeohYSw-cf](https://play.golang.org/p/wyeohYSw-cf)
+
+
 ```go
 package main
 
@@ -790,11 +793,12 @@ func main() {
     fmt.Printf("%+v\n", v) // prints {X:4 Y:2}
 
     // additional examples
-    v1 = Vertex{1, 2}  // has type Vertex
-    v2 = Vertex{X: 1}  // Y:0 is implicit
-    v3 = Vertex{}      // X:0 and Y:0
+    v1 := Vertex{1, 2}  // has type Vertex
+    v2 := Vertex{X: 1}  // Y:0 is implicit
+    v3 := Vertex{}      // X:0 and Y:0
 
-    delete(v, "X")
+    v.X = 0
+    fmt.Printf("1: %d, 2: %d, 3: %d", v1.X, v2.X, v3.X)
 }
 ```
 
