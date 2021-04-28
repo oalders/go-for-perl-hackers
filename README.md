@@ -101,7 +101,7 @@
       * [Deleting a Hash/Map Key](#deleting-a-hashmap-key)
         * [Perl:](#perl-22)
         * [Go:](#go-22)
-      * [Getting an array Hash/Map Keys](#getting-an-array-hashmap-keys)
+      * [Getting a List of Hash/Map Keys](#getting-a-list-of-hashmap-keys)
         * [Perl:](#perl-23)
         * [Go:](#go-23)
       * [Slices:](#slices)
@@ -969,7 +969,7 @@ func main() {
 }
 ```
 
-#### Getting an array Hash/Map Keys
+#### Getting a List of Hash/Map Keys
 
 ##### Perl:
 
@@ -981,9 +981,14 @@ my @keys = keys %pages;
 
 ##### Go:
 
-```go
+[https://play.golang.org/p/b21XYOReH6S](https://play.golang.org/p/b21XYOReH6S)
 
+```go
 package main
+
+import (
+	"fmt"
+)
 
 func main() {
 	pages := make(map[string]string)
@@ -993,6 +998,7 @@ func main() {
 	for k := range pages {
         	keys = append(keys, k)
     	}
+	fmt.Printf("%+v", keys)
 }
 ```
 #### Slices:
