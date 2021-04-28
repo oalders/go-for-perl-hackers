@@ -990,7 +990,9 @@ func main() {
 	pages["home"] = "https://metacpan.org"
 
 	keys := []string{}
-	keys = append(keys, "foo")
+	for k := range pages {
+        	keys = append(keys, k)
+    	}
 }
 ```
 #### Slices:
