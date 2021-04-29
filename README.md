@@ -353,7 +353,7 @@ print 'hello, world';
 
 ##### Go:
 
-```
+```go
 package main
 
 import "fmt"
