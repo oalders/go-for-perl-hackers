@@ -358,8 +358,8 @@ package main
 
 import "fmt"
 
-func main () {
-    fmt.Print("hello, world")
+func main() {
+	fmt.Print("hello, world")
 }
 ```
 
@@ -376,12 +376,13 @@ printf('We are open %i days per %s', 7, 'week');
 ```go
 package main
 
-import ( "fmt" )
+import (
+	"fmt"
+)
 
 func main() {
-    fmt.Printf("We are open %d days per %s", 7, "week")
+	fmt.Printf("We are open %d days per %s", 7, "week")
 }
-
 ```
 
 See [golang.org/pkg/fmt/](https://golang.org/pkg/fmt/)
@@ -439,10 +440,10 @@ my $no_assignment;
 var foo = "bar"
 foo := "bar"
 
-var pi float32 = 3.14  // explicit cast as float32
-pi := float32(3.14)    // explicit cast as float32
-pi := 3.14             // implicit cast as float64
-pi := "3.14"           // implicit cast as string
+var pi float32 = 3.14 // explicit cast as float32
+pi := float32(3.14)   // explicit cast as float32
+pi := 3.14            // implicit cast as float64
+pi := "3.14"          // implicit cast as string
 
 var noAssignment string // equivalent to: noAssignment := ""
 ```
@@ -547,19 +548,19 @@ success = true
 success = false
 
 if success == true {
-    fmt.Println("This succeeded")
+	fmt.Println("This succeeded")
 }
 
 if success {
-    fmt.Println("This succeeded")
+	fmt.Println("This succeeded")
 }
 
 if success == false {
-    fmt.Println("This failed")
+	fmt.Println("This failed")
 }
 
 if !success {
-    fmt.Println("This failed")
+	fmt.Println("This failed")
 }
 ```
 
@@ -580,14 +581,13 @@ if ( ! defined $foo ) {
 var myString string
 
 if myString == "" {
-    fmt.Println("Empty")
+	fmt.Println("Empty")
 }
-
 
 var mySlice []int
 
 if mySlice == nil {
-    fmt.Println("nil")
+	fmt.Println("nil")
 }
 ```
 
@@ -635,15 +635,15 @@ $gopher = sprintf '%s%s', $foo, $bar;
 package main
 
 import (
-    "fmt"
-    "strings"
+	"fmt"
+	"strings"
 )
 
 func main() {
-    var gopher string
+	var gopher string
 
-    gopher = foo + bar
-    gopher = fmt.Sprintf("%s%s", foo, bar)
+	gopher = foo + bar
+	gopher = fmt.Sprintf("%s%s", foo, bar)
 }
 ```
 
@@ -651,16 +651,16 @@ func main() {
 package main
 
 import (
-    "fmt"
-    "strings"
+	"fmt"
+	"strings"
 )
 
 func main() {
-    foo := "go"
-    bar := "pher"
+	foo := "go"
+	bar := "pher"
 
-    gopher = strings.Join([]string{"go", "pher"}, "")
-    fmt.Println(gopher)
+	gopher = strings.Join([]string{"go", "pher"}, "")
+	fmt.Println(gopher)
 }
 ```
 
@@ -668,18 +668,18 @@ func main() {
 package main
 
 import (
-    "bytes"
-    "fmt"
+	"bytes"
+	"fmt"
 )
 
 func main() {
-    var buffer bytes.Buffer
-    foo := "go"
-    bar := "pher"
+	var buffer bytes.Buffer
+	foo := "go"
+	bar := "pher"
 
-    buffer.WriteString(foo)
-    buffer.WriteString(bar)
-    fmt.Println(buffer.String())
+	buffer.WriteString(foo)
+	buffer.WriteString(bar)
+	fmt.Println(buffer.String())
 }
 ```
 
@@ -705,9 +705,9 @@ const hello string = "Hello, World"
 Create multiple constants with one `const` declaration:
 
 ```go
-const(
-    hello   = "Hello, world"
-    goodbye = "Goodbye!"
+const (
+	hello   = "Hello, world"
+	goodbye = "Goodbye!"
 )
 ```
 
@@ -727,7 +727,7 @@ my $first = $foo[0];
 ##### Go:
 
 ```go
-foo := [3]int{1,2,3}
+foo := [3]int{1, 2, 3}
 first := foo[0]
 ```
 
@@ -787,23 +787,23 @@ package main
 import "fmt"
 
 type Vertex struct {
-    X int
-    Y int
+	X int
+	Y int
 }
 
 func main() {
-    v := Vertex{1, 2}
-    v.X = 4
-    fmt.Println(v.X) // prints 4
-    fmt.Printf("%+v\n", v) // prints {X:4 Y:2}
+	v := Vertex{1, 2}
+	v.X = 4
+	fmt.Println(v.X)       // prints 4
+	fmt.Printf("%+v\n", v) // prints {X:4 Y:2}
 
-    // additional examples
-    v1 := Vertex{1, 2}  // has type Vertex
-    v2 := Vertex{X: 1}  // Y:0 is implicit
-    v3 := Vertex{}      // X:0 and Y:0
+	// additional examples
+	v1 := Vertex{1, 2} // has type Vertex
+	v2 := Vertex{X: 1} // Y:0 is implicit
+	v3 := Vertex{}     // X:0 and Y:0
 
-    v.X = 0
-    fmt.Printf("1: %d, 2: %d, 3: %d", v1.X, v2.X, v3.X)
+	v.X = 0
+	fmt.Printf("1: %d, 2: %d, 3: %d", v1.X, v2.X, v3.X)
 }
 ```
 
@@ -853,7 +853,6 @@ func main() {
 		fmt.Printf("index: %v value: %v\n", i, v)
 	}
 }
-
 ```
 
 #### Splitting a string
@@ -930,7 +929,6 @@ if ( exists $foo{home} ) {
 [https://stackoverflow.com/a/2050629/406224](https://stackoverflow.com/a/2050629/406224)
 
 ```go
-
 package main
 
 import "fmt"
@@ -939,7 +937,7 @@ func main() {
 	pages := make(map[string]string)
 	pages["home"] = "https://metacpan.org"
 	if _, ok := pages["home"]; ok {
-	    fmt.Println("ok")
+		fmt.Println("ok")
 	}
 }
 ```
@@ -957,7 +955,6 @@ delete $pages{home};
 ##### Go:
 
 ```go
-
 package main
 
 import "fmt"
@@ -965,7 +962,7 @@ import "fmt"
 func main() {
 	pages := make(map[string]string)
 	pages["home"] = "https://metacpan.org"
-  delete(pages, "home")
+	delete(pages, "home")
 }
 ```
 
@@ -996,8 +993,8 @@ func main() {
 
 	keys := []string{}
 	for k := range pages {
-        	keys = append(keys, k)
-    	}
+		keys = append(keys, k)
+	}
 	fmt.Printf("%+v", keys)
 }
 ```
@@ -1013,7 +1010,7 @@ my @slice = @list[2..4];
 ##### Go:
 
 ```go
-array := [6]int{0,1,2,3,4,5}
+array := [6]int{0, 1, 2, 3, 4, 5}
 var slice []int = array[2:4]
 
 var myslice []int    // create an empty slice of integers
@@ -1035,10 +1032,10 @@ See [https://tour.golang.org/moretypes/8](https://tour.golang.org/moretypes/8)
 Note also that slices in Go can use defaults for lower and upper bounds. That means that for the array of 10 integers `var a [10]int`, the following slices are equivalent:
 
 ```go
-a[0:10]  // explicit lower to upper bound
-a[:10]   // use default lower bound (0)
-a[0:]    // use default upper bound (0)
-a[:]     // use default upper and lower bounds (0 and 10)
+a[0:10] // explicit lower to upper bound
+a[:10]  // use default lower bound (0)
+a[0:]   // use default upper bound (0)
+a[:]    // use default upper and lower bounds (0 and 10)
 ```
 
 Note that the lower bound is the starting point in the index (ie 0) and the _length_ of the slice is the upper bound, which is why the entire slice consists of `a[0:10` and _not_ `a[0:9]`.
@@ -1059,7 +1056,7 @@ Note that in Perl, a slice of an array is also an array, so there's no need to m
 ##### Go:
 
 ```go
-array := [6]int{0,1,2,3,4,5}
+array := [6]int{0, 1, 2, 3, 4, 5}
 var slice []int = array[2:4]
 slice = append(slice, 11, 12)
 ```
@@ -1093,17 +1090,17 @@ package main
 import "fmt"
 
 func main() {
-    var config struct {
-        user    string
-        pass    string
-    }
+	var config struct {
+		user string
+		pass string
+	}
 
-    config.user = "florence"
-    config.pass = "machine"
+	config.user = "florence"
+	config.pass = "machine"
 
-    fmt.Printf("%+v", config)
+	fmt.Printf("%+v", config)
 
-    return
+	return
 }
 ```
 
@@ -1115,17 +1112,17 @@ package main
 import "github.com/davecgh/go-spew/spew"
 
 func main() {
-    var config struct {
-        user    string
-        pass    string
-    }
+	var config struct {
+		user string
+		pass string
+	}
 
-    config.user = "florence"
-    config.pass = "machine"
+	config.user = "florence"
+	config.pass = "machine"
 
-    spew.Dump(config)
+	spew.Dump(config)
 
-    return
+	return
 }
 ```
 
@@ -1147,27 +1144,27 @@ path('/tmp/foo.txt')->spew( np( @list ) );
 package main
 
 import (
-    "log"
-    "os"
+	"log"
+	"os"
 
-    "github.com/davecgh/go-spew/spew"
+	"github.com/davecgh/go-spew/spew"
 )
 
 func main() {
-    list := [3]int{1, 2, 3}
+	list := [3]int{1, 2, 3}
 
-    file, err := os.OpenFile(
-        "/tmp/foo.txt",
-        os.O_CREATE|os.O_WRONLY,
-        0666,
-    )
+	file, err := os.OpenFile(
+		"/tmp/foo.txt",
+		os.O_CREATE|os.O_WRONLY,
+		0666,
+	)
 
-    if err != nil {
-        log.Fatal(err)
-    }
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    spew.Fdump(file, list)
-    file.Close()
+	spew.Fdump(file, list)
+	file.Close()
 }
 ```
 
@@ -1189,27 +1186,27 @@ path('/tmp/foo.txt')->append( np( @list ) );
 package main
 
 import (
-    "log"
-    "os"
+	"log"
+	"os"
 
-    "github.com/davecgh/go-spew/spew"
+	"github.com/davecgh/go-spew/spew"
 )
 
 func main() {
-    list := [3]int{1, 2, 3}
+	list := [3]int{1, 2, 3}
 
-    file, err := os.OpenFile(
-        "/tmp/foo.txt",
-        os.O_APPEND|os.O_CREATE|os.O_WRONLY,
-        0666,
-    )
+	file, err := os.OpenFile(
+		"/tmp/foo.txt",
+		os.O_APPEND|os.O_CREATE|os.O_WRONLY,
+		0666,
+	)
 
-    if err != nil {
-        log.Fatal(err)
-    }
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    spew.Fdump(file, list)
-    file.Close()
+	spew.Fdump(file, list)
+	file.Close()
 }
 ```
 
@@ -1265,14 +1262,14 @@ my $content = path('path', 'to', 'file')->slurp_utf8;
 Note that in this case `content` is `[]byte`
 
 ```go
-    content, err := ioutil.ReadFile(filepath.Join("path", "to", "file"))
+content, err := ioutil.ReadFile(filepath.Join("path", "to", "file"))
 
-    if err != nil {
-        log.Fatal(err)
-    }
+if err != nil {
+	log.Fatal(err)
+}
 
-    // convert byte array to string
-    contentAsString := string(content[:])
+// convert byte array to string
+contentAsString := string(content[:])
 ```
 
 #### Read First Line of a File
@@ -1301,30 +1298,30 @@ print $first_line, "\n";
 `scanner.Scan()` helpfully trims newlines for us.
 
 ```go
-import(
-    "fmt"
-    "log"
+import (
+	"fmt"
+	"log"
 )
 
 func main() {
-    file, err := os.Open("/path/to/file")
-    if err != nil {
-        log.Fatal(err)
-    }
-    defer file.Close()
+	file, err := os.Open("/path/to/file")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
 
-    scanner := bufio.NewScanner(file)
+	scanner := bufio.NewScanner(file)
 
-    var firstLine string
-    for scanner.Scan() {
-        firstLine = scanner.Text()
-        break
-    }
-    if err := scanner.Err(); err != nil {
-        log.Fatal(err)
-    }
+	var firstLine string
+	for scanner.Scan() {
+		firstLine = scanner.Text()
+		break
+	}
+	if err := scanner.Err(); err != nil {
+		log.Fatal(err)
+	}
 
-    fmt.Println(firstLine)
+	fmt.Println(firstLine)
 }
 ```
 
@@ -1343,13 +1340,13 @@ if ( $foo > 1 ) {
 ##### Go:
 
 ```go
-if ( foo > 1 ) {
-    fmt.Println("bar")
+if foo > 1 {
+	fmt.Println("bar")
 }
 
 // parens are optional
 if foo > 1 {
-    fmt.Println("bar")
+	fmt.Println("bar")
 }
 ```
 
@@ -1370,9 +1367,9 @@ else {
 
 ```go
 if foo > 1 {
-     fmt.Println("bar")
+	fmt.Println("bar")
 } else {
-     fmt.Println("baz")
+	fmt.Println("baz")
 }
 ```
 
@@ -1393,9 +1390,9 @@ elsif ( $foo < 10 ) {
 
 ```go
 if foo > 1 {
-     fmt.Println("bar")
+	fmt.Println("bar")
 } else if foo < 10 {
-     fmt.Println("baz")
+	fmt.Println("baz")
 }
 ```
 
@@ -1417,7 +1414,7 @@ for ( my $i = 0 ; $i < 10 ; $i++ ) {
 ```go
 sum := 0
 for i := 0; i < 10; i++ {
-    sum += i
+	sum += i
 }
 ```
 
@@ -1440,8 +1437,8 @@ while ( $i < 10 ) {
 sum := 0
 i := 0
 for i < 10 {
-    sum += i
-    i += 1
+	sum += i
+	i += 1
 }
 ```
 
@@ -1477,12 +1474,11 @@ Go:
 
 ```go
 for {
-    if foo == "bar" {
-        continue
-    }
-    // Won't get here if continue is called
+	if foo == "bar" {
+		continue
+	}
+	// Won't get here if continue is called
 }
-
 ```
 
 Note that `continue` will immediately begin the next iteration of the innermost `for` loop.
@@ -1503,12 +1499,11 @@ Go:
 
 ```go
 for {
-    if foo == "bar" {
-        break
-    }
-    // Won't get here if break is called
+	if foo == "bar" {
+		break
+	}
+	// Won't get here if break is called
 }
-
 ```
 
 Note that `break` will exit the enclosing loop at the point where it is called.
@@ -1528,14 +1523,14 @@ print DateTime->now->ymd;
 
 ```go
 package main
- 
+
 import (
-    "fmt"
-    "time"
+	"fmt"
+	"time"
 )
 
 func main() {
-    fmt.Println(time.Now().Format("2006-01-02"))
+	fmt.Println(time.Now().Format("2006-01-02"))
 }
 ```
 
@@ -1661,11 +1656,11 @@ sleep 60;
 package main
 
 import (
-    "time"
+	"time"
 )
 
 func main() {
-    time.Sleep(60 * time.Second)
+	time.Sleep(60 * time.Second)
 }
 ```
 
@@ -1682,20 +1677,19 @@ print $url->query->param('q'); # schitt's creek
 #### Go:
 
 ```go
-
 import (
-    "fmt"
-    "log"
-    "net/url"
+	"fmt"
+	"log"
+	"net/url"
 )
 
 func main() {
-    url, err := url.Parse("https://www.google.com/search?q=schitt%27s+creek")
-    if err != nil {
-        log.Fatal(err)
-    }
-    q := url.Query()
-    fmt.Println(q.Get("q")) // schitt's creek
+	url, err := url.Parse("https://www.google.com/search?q=schitt%27s+creek")
+	if err != nil {
+		log.Fatal(err)
+	}
+	q := url.Query()
+	fmt.Println(q.Get("q")) // schitt's creek
 }
 ```
 
@@ -1721,7 +1715,6 @@ func main() {
 
 	fmt.Println(url)
 }
-
 ```
 
 ### Command Line Scripts
@@ -1736,14 +1729,14 @@ print $ARGV[0], "\n" if $ARGV[0];
 package main
 
 import (
-        "fmt"
-        "os"
+	"fmt"
+	"os"
 )
 
 func main() {
-        if len(os.Args) > 1 {
-                fmt.Printf("%v\n", os.Args[1])
-        }
+	if len(os.Args) > 1 {
+		fmt.Printf("%v\n", os.Args[1])
+	}
 }
 ```
 
