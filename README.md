@@ -1572,7 +1572,7 @@ func foo() {
 
 #### Perl:
 
-```perl
+```shell
 $ perl Makefile.PL
 $ make
 $ make test
@@ -1580,25 +1580,25 @@ $ make test
 
 or
 
-```perl
+```shell
 $ prove -l t/path/to/test.t
 ```
 
 Use the `-v` flag for verbose output:
 
-```perl
+```shell
 $ prove -lv t/path/to/test.t
 ```
 
 #### Go:
 
-```go
+```shell
 $ go test
 ```
 
 Use the `-v` flag for verbose output:
 
-```go
+```shell
 $ go test -v
 ```
 
@@ -1608,7 +1608,7 @@ two files.)
 
 To test a subset of functions:
 
-```go
+```shell
 $ go test -run regexp
 ```
 
@@ -1618,7 +1618,7 @@ in.
 
 To bypass Go's test caching:
 
-```go
+```shell
 $ go test -count=1
 ```
 
