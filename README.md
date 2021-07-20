@@ -6,6 +6,7 @@
     * [vim](#vim)
       * [shortcuts](#shortcuts)
       * [vim-go commands](#vim-go-commands)
+        * [:GoAddTags](#goaddtags)
         * [:GoBuild](#gobuild)
         * [:GoRun](#gorun)
         * [:GoGenerate](#gogenerate)
@@ -230,6 +231,10 @@ autocmd FileType go setlocal nolist
 needing to select it.
 
 #### vim-go commands
+
+##### :GoAddTags
+
+Adds `json/db` tags to the struct under your cursor. Uses [gomodifytags](https://github.com/fatih/gomodifytags). There is a standalone implementation at [vim-goaddtags](https://github.com/mattn/vim-goaddtags).
 
 ##### :GoBuild
 
