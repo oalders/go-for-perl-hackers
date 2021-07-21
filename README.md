@@ -1131,6 +1131,33 @@ func main() {
 }
 ```
 
+Or:
+
+```go
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	"log"
+)
+
+func main() {
+	data := []string{"one", "two", "three"}
+	fmt.Println(PrettyJSON(data))
+}
+
+func PrettyJSON(target interface{}) string {
+	data, err := json.MarshalIndent(target, "", "    ")
+	if err != nil {
+		log.Fatalf("Cannot create pretty json from %v: %v", target, err)
+	}
+	return string(data)
+}
+```
+
+[https://play.golang.org/p/FbSfHRNoVfP](https://play.golang.org/p/FbSfHRNoVfP)
+
 #### To disk (write)
 
 ##### Perl
