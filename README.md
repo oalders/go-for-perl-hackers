@@ -1318,18 +1318,35 @@ my $content = path('path', 'to', 'file')->slurp_utf8;
 
 ##### Go
 
-Note that in this case `content` is `[]byte`
+Note that in this case `dat` is `[]byte`
 
 ```go
-content, err := ioutil.ReadFile(filepath.Join("path", "to", "file"))
+// You can edit this code!
+// Click here and start typing.
+package main
 
-if err != nil {
-	log.Fatal(err)
+import (
+	"fmt"
+	"log"
+	"os"
+)
+
+func main() {
+	err := os.WriteFile("test.txt", []byte("Hello, Gophers!"), 0666)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	dat, err := os.ReadFile("test.txt")
+	if err != nil {
+		log.Fatal(err)
+	} else {
+		fmt.Println(string(dat))
+	}
 }
-
-// convert byte array to string
-contentAsString := string(content[:])
 ```
+
+[https://go.dev/play/p/3dCR2NJuZOF](https://go.dev/play/p/3dCR2NJuZOF)
 
 #### Read First Line of a File
 
