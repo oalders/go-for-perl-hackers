@@ -968,7 +968,7 @@ func main() {
 
 #### Iterating Over a Hash/Map
 
-##### Perl
+##### Perl using keys
 
 ```perl
 my %hash = ( key_1 => 'foo', key_2 => 'bar', );
@@ -978,7 +978,7 @@ for my $key ( keys %hash ) {
 
 ```
 
-##### Go
+##### Go using only primary return value
 
 ```go
 package main
@@ -992,6 +992,62 @@ func main() {
 
 	for k := range myMap {
 		fmt.Printf("key: %s value: %s\n", k, myMap[k])
+	}
+}
+```
+
+##### Perl using each
+
+```perl
+my %hash = ( key_1 => 'foo', key_2 => 'bar', );
+for my $key, $value ( each %hash ) {
+    printf( "key: %s value: %s\n", $key, $value );
+}
+
+```
+
+##### Go using only primary and secondary return values
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	myMap := map[string]string{"key1": "foo", "key2": "bar"}
+
+	for _, v := range myMap {
+		fmt.Printf("key: %s value: %s\n", k, v)
+	}
+}
+```
+
+##### Perl using values
+
+```perl
+my %hash = ( key_1 => 'foo', key_2 => 'bar', );
+for my $key, $value ( values %hash ) {
+    printf( "key: %s value: %s\n", $key, $value );
+}
+
+```
+
+##### Go using ignoring primary return value, using only secondary return value
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	myMap := map[string]string{"key1": "foo", "key2": "bar"}
+
+	for _, v := range myMap {
+		fmt.Printf("value: %s\n", v)
 	}
 }
 ```
