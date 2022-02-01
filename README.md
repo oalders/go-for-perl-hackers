@@ -1006,7 +1006,7 @@ for my $key, $value ( each %hash ) {
 
 ```
 
-##### Go using only primary and secondary return values
+##### Go using both primary and secondary return values
 
 ```go
 package main
@@ -1018,7 +1018,7 @@ import (
 func main() {
 	myMap := map[string]string{"key1": "foo", "key2": "bar"}
 
-	for _, v := range myMap {
+	for k, v := range myMap {
 		fmt.Printf("key: %s value: %s\n", k, v)
 	}
 }
@@ -1028,8 +1028,8 @@ func main() {
 
 ```perl
 my %hash = ( key_1 => 'foo', key_2 => 'bar', );
-for my $key, $value ( values %hash ) {
-    printf( "key: %s value: %s\n", $key, $value );
+for my $value ( values %hash ) {
+    printf( "value: %s\n", $value );
 }
 
 ```
