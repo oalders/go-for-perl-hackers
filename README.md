@@ -996,6 +996,8 @@ func main() {
 }
 ```
 
+- [Go Playground](https://go.dev/play/p/qHcGFM1YRbF)
+
 ##### Perl using each
 
 ```perl
@@ -1024,6 +1026,8 @@ func main() {
 }
 ```
 
+- [Go Playground](https://go.dev/play/p/01_1pFznIHQ)
+
 ##### Perl using values
 
 ```perl
@@ -1031,7 +1035,6 @@ my %hash = ( key_1 => 'foo', key_2 => 'bar', );
 for my $value ( values %hash ) {
     printf( "value: %s\n", $value );
 }
-
 ```
 
 ##### Go using ignoring primary return value, using only secondary return value
@@ -1051,6 +1054,8 @@ func main() {
 	}
 }
 ```
+
+- [Go Playground](https://go.dev/play/p/UWqh6M4dGB6)
 
 #### Checking if a Hash/Map Key Exists
 
