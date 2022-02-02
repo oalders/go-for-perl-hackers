@@ -209,13 +209,13 @@ Consider adding the `vim-go` plugin to your `.vimrc`
 If you're using [vim-plug](https://github.com/junegunn/vim-plug), that would
 look something like:
 
-```
+```vim
 Plug 'fatih/vim-go'
 ```
 
 If you're using Pathogen, that would look something like:
 
-```
+```vim
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 " Bundle: tpope/vim-pathogen
 call pathogen#infect()
@@ -235,7 +235,7 @@ Then add the following to your `.vimrc`
 
 If your editor is set up to display tabs visually, you may want to disable that for Go files.
 
-```
+```vim
 autocmd FileType go setlocal nolist
 ```
 
@@ -869,7 +869,6 @@ delete $foo{X};
 
 [https://play.golang.org/p/wyeohYSw-cf](https://play.golang.org/p/wyeohYSw-cf)
 
-
 ```go
 package main
 
@@ -1000,7 +999,7 @@ func main() {
 }
 ```
 
-- [Go Playground](https://go.dev/play/p/qHcGFM1YRbF)
+* [Go Playground](https://go.dev/play/p/qHcGFM1YRbF)
 
 ##### Perl using each
 
@@ -1030,7 +1029,7 @@ func main() {
 }
 ```
 
-- [Go Playground](https://go.dev/play/p/01_1pFznIHQ)
+* [Go Playground](https://go.dev/play/p/01_1pFznIHQ)
 
 ##### Perl using values
 
@@ -1059,7 +1058,7 @@ func main() {
 }
 ```
 
-- [Go Playground](https://go.dev/play/p/UWqh6M4dGB6)
+* [Go Playground](https://go.dev/play/p/UWqh6M4dGB6)
 
 #### Checking if a Hash/Map Key Exists
 
@@ -1148,6 +1147,7 @@ func main() {
 	fmt.Printf("%+v", keys)
 }
 ```
+
 #### Slices:
 
 ##### Perl
@@ -1195,6 +1195,7 @@ See [https://tour.golang.org/moretypes/10](https://tour.golang.org/moretypes/10)
 #### Appending Slices:
 
 ##### Perl
+
 ```perl
 my @array = (0..5);
 my @slice = @list[2..4];
@@ -1704,7 +1705,7 @@ Note that `break` will exit the enclosing loop at the point where it is called.
 
 ### Today's Date as YYYY-MM-DD
 
-##### Perl
+#### Perl
 
 ```perl
 use DateTime ();
@@ -1727,7 +1728,6 @@ func main() {
 	fmt.Println(time.Now().Format("2006-01-02"))
 }
 ```
-
 
 ### Functions
 
