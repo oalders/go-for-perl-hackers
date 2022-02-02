@@ -378,7 +378,7 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Print("hello, world")
+	fmt.Print("hello, world")
 }
 ```
 
@@ -396,11 +396,11 @@ printf('We are open %i days per %s', 7, 'week');
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 func main() {
-    fmt.Printf("We are open %d days per %s", 7, "week")
+	fmt.Printf("We are open %d days per %s", 7, "week")
 }
 ```
 
@@ -567,19 +567,19 @@ success = true
 success = false
 
 if success == true {
-    fmt.Println("This succeeded")
+	fmt.Println("This succeeded")
 }
 
 if success {
-    fmt.Println("This succeeded")
+	fmt.Println("This succeeded")
 }
 
 if success == false {
-    fmt.Println("This failed")
+	fmt.Println("This failed")
 }
 
 if !success {
-    fmt.Println("This failed")
+	fmt.Println("This failed")
 }
 ```
 
@@ -600,13 +600,13 @@ if ( ! defined $foo ) {
 var myString string
 
 if myString == "" {
-    fmt.Println("Empty")
+	fmt.Println("Empty")
 }
 
 var mySlice []int
 
 if mySlice == nil {
-    fmt.Println("nil")
+	fmt.Println("nil")
 }
 ```
 
@@ -650,8 +650,8 @@ package main
 import "fmt"
 
 func main() {
-    amount := float32(18) / float32(20000)
-    fmt.Println(amount)
+	amount := float32(18) / float32(20000)
+	fmt.Println(amount)
 }
 ```
 
@@ -679,15 +679,15 @@ $gopher = sprintf '%s%s', $foo, $bar;
 package main
 
 import (
-    "fmt"
-    "strings"
+	"fmt"
+	"strings"
 )
 
 func main() {
-    var gopher string
+	var gopher string
 
-    gopher = foo + bar
-    gopher = fmt.Sprintf("%s%s", foo, bar)
+	gopher = foo + bar
+	gopher = fmt.Sprintf("%s%s", foo, bar)
 }
 ```
 
@@ -695,16 +695,16 @@ func main() {
 package main
 
 import (
-    "fmt"
-    "strings"
+	"fmt"
+	"strings"
 )
 
 func main() {
-    foo := "go"
-    bar := "pher"
+	foo := "go"
+	bar := "pher"
 
-    gopher = strings.Join([]string{"go", "pher"}, "")
-    fmt.Println(gopher)
+	gopher = strings.Join([]string{"go", "pher"}, "")
+	fmt.Println(gopher)
 }
 ```
 
@@ -712,18 +712,18 @@ func main() {
 package main
 
 import (
-    "bytes"
-    "fmt"
+	"bytes"
+	"fmt"
 )
 
 func main() {
-    var buffer bytes.Buffer
-    foo := "go"
-    bar := "pher"
+	var buffer bytes.Buffer
+	foo := "go"
+	bar := "pher"
 
-    buffer.WriteString(foo)
-    buffer.WriteString(bar)
-    fmt.Println(buffer.String())
+	buffer.WriteString(foo)
+	buffer.WriteString(bar)
+	fmt.Println(buffer.String())
 }
 ```
 
@@ -742,8 +742,8 @@ $foo .= 'pher';
 package main
 
 func main() {
-    foo := "go"
-    foo += "pher"
+	foo := "go"
+	foo += "pher"
 }
 ```
 
@@ -795,8 +795,8 @@ Create multiple constants with one `const` declaration:
 
 ```go
 const (
-    hello   = "Hello, world"
-    goodbye = "Goodbye!"
+	hello   = "Hello, world"
+	goodbye = "Goodbye!"
 )
 ```
 
@@ -875,23 +875,23 @@ package main
 import "fmt"
 
 type Vertex struct {
-    X int
-    Y int
+	X int
+	Y int
 }
 
 func main() {
-    v := Vertex{1, 2}
-    v.X = 4
-    fmt.Println(v.X)       // prints 4
-    fmt.Printf("%+v\n", v) // prints {X:4 Y:2}
+	v := Vertex{1, 2}
+	v.X = 4
+	fmt.Println(v.X)       // prints 4
+	fmt.Printf("%+v\n", v) // prints {X:4 Y:2}
 
-    // additional examples
-    v1 := Vertex{1, 2} // has type Vertex
-    v2 := Vertex{X: 1} // Y:0 is implicit
-    v3 := Vertex{}     // X:0 and Y:0
+	// additional examples
+	v1 := Vertex{1, 2} // has type Vertex
+	v2 := Vertex{X: 1} // Y:0 is implicit
+	v3 := Vertex{}     // X:0 and Y:0
 
-    v.X = 0
-    fmt.Printf("1: %d, 2: %d, 3: %d", v1.X, v2.X, v3.X)
+	v.X = 0
+	fmt.Printf("1: %d, 2: %d, 3: %d", v1.X, v2.X, v3.X)
 }
 ```
 
@@ -931,15 +931,15 @@ for my $i (0..$#foo) {
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 func main() {
-    foo := [3]int{1, 2, 3}
+	foo := [3]int{1, 2, 3}
 
-    for i, v := range foo {
-        fmt.Printf("index: %v value: %v\n", i, v)
-    }
+	for i, v := range foo {
+		fmt.Printf("index: %v value: %v\n", i, v)
+	}
 }
 ```
 
@@ -959,13 +959,13 @@ my @list = split ',', 'a,b,c'
 package main
 
 import (
-    "fmt"
-    "strings"
+	"fmt"
+	"strings"
 )
 
 func main() {
-    mySlice := strings.Split("a,b,c", ",")
-    fmt.Printf("%v", mySlice)
+	mySlice := strings.Split("a,b,c", ",")
+	fmt.Printf("%v", mySlice)
 }
 ```
 
@@ -987,15 +987,15 @@ for my $key ( keys %hash ) {
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 func main() {
-    myMap := map[string]string{"key1": "foo", "key2": "bar"}
+	myMap := map[string]string{"key1": "foo", "key2": "bar"}
 
-    for k := range myMap {
-        fmt.Printf("key: %s value: %s\n", k, myMap[k])
-    }
+	for k := range myMap {
+		fmt.Printf("key: %s value: %s\n", k, myMap[k])
+	}
 }
 ```
 
@@ -1017,15 +1017,15 @@ for my $key, $value ( each %hash ) {
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 func main() {
-    myMap := map[string]string{"key1": "foo", "key2": "bar"}
+	myMap := map[string]string{"key1": "foo", "key2": "bar"}
 
-    for k, v := range myMap {
-        fmt.Printf("key: %s value: %s\n", k, v)
-    }
+	for k, v := range myMap {
+		fmt.Printf("key: %s value: %s\n", k, v)
+	}
 }
 ```
 
@@ -1046,15 +1046,15 @@ for my $value ( values %hash ) {
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 func main() {
-    myMap := map[string]string{"key1": "foo", "key2": "bar"}
+	myMap := map[string]string{"key1": "foo", "key2": "bar"}
 
-    for _, v := range myMap {
-        fmt.Printf("value: %s\n", v)
-    }
+	for _, v := range myMap {
+		fmt.Printf("value: %s\n", v)
+	}
 }
 ```
 
@@ -1083,11 +1083,11 @@ package main
 import "fmt"
 
 func main() {
-    pages := make(map[string]string)
-    pages["home"] = "https://metacpan.org"
-    if _, ok := pages["home"]; ok {
-        fmt.Println("ok")
-    }
+	pages := make(map[string]string)
+	pages["home"] = "https://metacpan.org"
+	if _, ok := pages["home"]; ok {
+		fmt.Println("ok")
+	}
 }
 ```
 
@@ -1109,9 +1109,9 @@ package main
 import "fmt"
 
 func main() {
-    pages := make(map[string]string)
-    pages["home"] = "https://metacpan.org"
-    delete(pages, "home")
+	pages := make(map[string]string)
+	pages["home"] = "https://metacpan.org"
+	delete(pages, "home")
 }
 ```
 
@@ -1133,18 +1133,18 @@ my @keys = keys %pages;
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 func main() {
-    pages := make(map[string]string)
-    pages["home"] = "https://metacpan.org"
+	pages := make(map[string]string)
+	pages["home"] = "https://metacpan.org"
 
-    keys := []string{}
-    for k := range pages {
-        keys = append(keys, k)
-    }
-    fmt.Printf("%+v", keys)
+	keys := []string{}
+	for k := range pages {
+		keys = append(keys, k)
+	}
+	fmt.Printf("%+v", keys)
 }
 ```
 
@@ -1241,17 +1241,17 @@ package main
 import "fmt"
 
 func main() {
-    var config struct {
-        user string
-        pass string
-    }
+	var config struct {
+		user string
+		pass string
+	}
 
-    config.user = "florence"
-    config.pass = "machine"
+	config.user = "florence"
+	config.pass = "machine"
 
-    fmt.Printf("%+v", config)
+	fmt.Printf("%+v", config)
 
-    return
+	return
 }
 ```
 
@@ -1263,17 +1263,17 @@ package main
 import "github.com/davecgh/go-spew/spew"
 
 func main() {
-    var config struct {
-        user string
-        pass string
-    }
+	var config struct {
+		user string
+		pass string
+	}
 
-    config.user = "florence"
-    config.pass = "machine"
+	config.user = "florence"
+	config.pass = "machine"
 
-    spew.Dump(config)
+	spew.Dump(config)
 
-    return
+	return
 }
 ```
 
@@ -1283,22 +1283,22 @@ Or:
 package main
 
 import (
-    "encoding/json"
-    "fmt"
-    "log"
+	"encoding/json"
+	"fmt"
+	"log"
 )
 
 func main() {
-    data := []string{"one", "two", "three"}
-    fmt.Println(PrettyJSON(data))
+	data := []string{"one", "two", "three"}
+	fmt.Println(PrettyJSON(data))
 }
 
 func PrettyJSON(target interface{}) string {
-    data, err := json.MarshalIndent(target, "", "    ")
-    if err != nil {
-        log.Fatalf("Cannot create pretty json from %v: %v", target, err)
-    }
-    return string(data)
+	data, err := json.MarshalIndent(target, "", "    ")
+	if err != nil {
+		log.Fatalf("Cannot create pretty json from %v: %v", target, err)
+	}
+	return string(data)
 }
 ```
 
@@ -1322,27 +1322,27 @@ path('/tmp/foo.txt')->spew( np( @list ) );
 package main
 
 import (
-    "log"
-    "os"
+	"log"
+	"os"
 
-    "github.com/davecgh/go-spew/spew"
+	"github.com/davecgh/go-spew/spew"
 )
 
 func main() {
-    list := [3]int{1, 2, 3}
+	list := [3]int{1, 2, 3}
 
-    file, err := os.OpenFile(
-        "/tmp/foo.txt",
-        os.O_CREATE|os.O_WRONLY,
-        0666,
-    )
+	file, err := os.OpenFile(
+		"/tmp/foo.txt",
+		os.O_CREATE|os.O_WRONLY,
+		0666,
+	)
 
-    if err != nil {
-        log.Fatal(err)
-    }
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    spew.Fdump(file, list)
-    file.Close()
+	spew.Fdump(file, list)
+	file.Close()
 }
 ```
 
@@ -1364,27 +1364,27 @@ path('/tmp/foo.txt')->append( np( @list ) );
 package main
 
 import (
-    "log"
-    "os"
+	"log"
+	"os"
 
-    "github.com/davecgh/go-spew/spew"
+	"github.com/davecgh/go-spew/spew"
 )
 
 func main() {
-    list := [3]int{1, 2, 3}
+	list := [3]int{1, 2, 3}
 
-    file, err := os.OpenFile(
-        "/tmp/foo.txt",
-        os.O_APPEND|os.O_CREATE|os.O_WRONLY,
-        0666,
-    )
+	file, err := os.OpenFile(
+		"/tmp/foo.txt",
+		os.O_APPEND|os.O_CREATE|os.O_WRONLY,
+		0666,
+	)
 
-    if err != nil {
-        log.Fatal(err)
-    }
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    spew.Fdump(file, list)
-    file.Close()
+	spew.Fdump(file, list)
+	file.Close()
 }
 ```
 
@@ -1413,15 +1413,15 @@ catch {
 package main
 
 import (
-    "log"
-    "os"
+	"log"
+	"os"
 )
 
 func main() {
-    cacheDir := ".my-go-cache"
-    if err := os.MkdirAll(cacheDir, 0644); err != nil {
-        log.Printf("Cannot create dir %s because %v", cacheDir, err)
-    }
+	cacheDir := ".my-go-cache"
+	if err := os.MkdirAll(cacheDir, 0644); err != nil {
+		log.Printf("Cannot create dir %s because %v", cacheDir, err)
+	}
 }
 ```
 
@@ -1445,23 +1445,23 @@ Note that in this case `dat` is `[]byte`
 package main
 
 import (
-    "fmt"
-    "log"
-    "os"
+	"fmt"
+	"log"
+	"os"
 )
 
 func main() {
-    err := os.WriteFile("test.txt", []byte("Hello, Gophers!"), 0666)
-    if err != nil {
-        log.Fatal(err)
-    }
+	err := os.WriteFile("test.txt", []byte("Hello, Gophers!"), 0666)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    dat, err := os.ReadFile("test.txt")
-    if err != nil {
-        log.Fatal(err)
-    } else {
-        fmt.Println(string(dat))
-    }
+	dat, err := os.ReadFile("test.txt")
+	if err != nil {
+		log.Fatal(err)
+	} else {
+		fmt.Println(string(dat))
+	}
 }
 ```
 
@@ -1494,29 +1494,29 @@ print $first_line, "\n";
 
 ```go
 import (
-    "fmt"
-    "log"
+	"fmt"
+	"log"
 )
 
 func main() {
-    file, err := os.Open("/path/to/file")
-    if err != nil {
-        log.Fatal(err)
-    }
-    defer file.Close()
+	file, err := os.Open("/path/to/file")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
 
-    scanner := bufio.NewScanner(file)
+	scanner := bufio.NewScanner(file)
 
-    var firstLine string
-    for scanner.Scan() {
-        firstLine = scanner.Text()
-        break
-    }
-    if err := scanner.Err(); err != nil {
-        log.Fatal(err)
-    }
+	var firstLine string
+	for scanner.Scan() {
+		firstLine = scanner.Text()
+		break
+	}
+	if err := scanner.Err(); err != nil {
+		log.Fatal(err)
+	}
 
-    fmt.Println(firstLine)
+	fmt.Println(firstLine)
 }
 ```
 
@@ -1536,12 +1536,12 @@ if ( $foo > 1 ) {
 
 ```go
 if foo > 1 {
-    fmt.Println("bar")
+	fmt.Println("bar")
 }
 
 // parens are optional
 if foo > 1 {
-    fmt.Println("bar")
+	fmt.Println("bar")
 }
 ```
 
@@ -1562,9 +1562,9 @@ else {
 
 ```go
 if foo > 1 {
-    fmt.Println("bar")
+	fmt.Println("bar")
 } else {
-    fmt.Println("baz")
+	fmt.Println("baz")
 }
 ```
 
@@ -1585,9 +1585,9 @@ elsif ( $foo < 10 ) {
 
 ```go
 if foo > 1 {
-    fmt.Println("bar")
+	fmt.Println("bar")
 } else if foo < 10 {
-    fmt.Println("baz")
+	fmt.Println("baz")
 }
 ```
 
@@ -1609,7 +1609,7 @@ for ( my $i = 0 ; $i < 10 ; $i++ ) {
 ```go
 sum := 0
 for i := 0; i < 10; i++ {
-    sum += i
+	sum += i
 }
 ```
 
@@ -1632,8 +1632,8 @@ while ( $i < 10 ) {
 sum := 0
 i := 0
 for i < 10 {
-    sum += i
-    i++
+	sum += i
+	i++
 }
 ```
 
@@ -1669,10 +1669,10 @@ Go
 
 ```go
 for {
-    if foo == "bar" {
-        continue
-    }
-    // Won't get here if continue is called
+	if foo == "bar" {
+		continue
+	}
+	// Won't get here if continue is called
 }
 ```
 
@@ -1694,10 +1694,10 @@ Go
 
 ```go
 for {
-    if foo == "bar" {
-        break
-    }
-    // Won't get here if break is called
+	if foo == "bar" {
+		break
+	}
+	// Won't get here if break is called
 }
 ```
 
@@ -1720,12 +1720,12 @@ print DateTime->now->ymd;
 package main
 
 import (
-    "fmt"
-    "time"
+	"fmt"
+	"time"
 )
 
 func main() {
-    fmt.Println(time.Now().Format("2006-01-02"))
+	fmt.Println(time.Now().Format("2006-01-02"))
 }
 ```
 
@@ -1750,10 +1750,10 @@ package main
 import "fmt"
 
 func main() {
-    foo()
+	foo()
 }
 func foo() {
-    fmt.Println("foo")
+	fmt.Println("foo")
 }
 ```
 
@@ -1828,11 +1828,11 @@ print longmess();
 package main
 
 import (
-    "runtime/debug"
+	"runtime/debug"
 )
 
 func main() {
-    debug.PrintStack()
+	debug.PrintStack()
 }
 ```
 
@@ -1850,11 +1850,11 @@ sleep 60;
 package main
 
 import (
-    "time"
+	"time"
 )
 
 func main() {
-    time.Sleep(60 * time.Second)
+	time.Sleep(60 * time.Second)
 }
 ```
 
@@ -1872,18 +1872,18 @@ print $url->query->param('q'); # schitt's creek
 
 ```go
 import (
-    "fmt"
-    "log"
-    "net/url"
+	"fmt"
+	"log"
+	"net/url"
 )
 
 func main() {
-    url, err := url.Parse("https://www.google.com/search?q=schitt%27s+creek")
-    if err != nil {
-        log.Fatal(err)
-    }
-    q := url.Query()
-    fmt.Println(q.Get("q")) // schitt's creek
+	url, err := url.Parse("https://www.google.com/search?q=schitt%27s+creek")
+	if err != nil {
+		log.Fatal(err)
+	}
+	q := url.Query()
+	fmt.Println(q.Get("q")) // schitt's creek
 }
 ```
 
@@ -1895,19 +1895,19 @@ func main() {
 package main
 
 import (
-    "fmt"
-    "net/url"
+	"fmt"
+	"net/url"
 )
 
 func main() {
-    url, _ := url.Parse("https://example.com")
+	url, _ := url.Parse("https://example.com")
 
-    q := url.Query()
-    q.Set("activity", "dance")
-    q.Set("type", "flash")
-    url.RawQuery = q.Encode()
+	q := url.Query()
+	q.Set("activity", "dance")
+	q.Set("type", "flash")
+	url.RawQuery = q.Encode()
 
-    fmt.Println(url)
+	fmt.Println(url)
 }
 ```
 
@@ -1923,14 +1923,14 @@ print $ARGV[0], "\n" if $ARGV[0];
 package main
 
 import (
-    "fmt"
-    "os"
+	"fmt"
+	"os"
 )
 
 func main() {
-    if len(os.Args) > 1 {
-        fmt.Printf("%v\n", os.Args[1])
-    }
+	if len(os.Args) > 1 {
+		fmt.Printf("%v\n", os.Args[1])
+	}
 }
 ```
 
