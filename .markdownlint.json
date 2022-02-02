@@ -1,0 +1,8 @@
+{
+    "no-duplicate-heading": false,
+    "line-length": false,
+    "first-line-heading": false,
+    "no-trailing-punctuation": false,
+    "commands-show-output": false,
+    "no-hard-tabs": false
+}
