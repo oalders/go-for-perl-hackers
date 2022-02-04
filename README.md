@@ -168,7 +168,7 @@
       * [Short-circuiting a loop iteration](#short-circuiting-a-loop-iteration)
       * [Terminating a loop](#terminating-a-loop)
     * [Today's Date as YYYY-MM-DD](#todays-date-as-yyyy-mm-dd)
-        * [Perl](#perl-39)
+      * [Perl](#perl-39)
       * [Go](#go-41)
     * [Functions](#functions)
       * [Functions without signatures](#functions-without-signatures)
