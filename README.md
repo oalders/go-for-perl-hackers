@@ -767,10 +767,10 @@ b := []byte("Each day provides its own gifts")
 
 // convert it back to a string
 contentAsString := string(b)
-```
 
 // convert byte array to string
 contentAsString := string(content[:])
+```
 
 #### Constants
 
