@@ -762,15 +762,24 @@ b := []byte("Each day provides its own gifts")
 ##### Go
 
 ```go
-// create the byte array
-b := []byte("Each day provides its own gifts")
+package main
 
-// convert it back to a string
-contentAsString := string(b)
+import "fmt"
 
-// convert byte array to string
-contentAsString := string(content[:])
+func main() {
+	// create the byte array
+	b := []byte("Each day provides its own gifts")
+
+	// convert back to a string by passing the array
+	contentAsString := string(b)
+	fmt.Println(contentAsString)
+
+	// convert back to a string by passing a slice referencing the storage of b
+	contentAsString = string(b[:])
+	fmt.Println(contentAsString)
+}
 ```
+[https://go.dev/play/p/DKsQJmS5yuf](https://go.dev/play/p/DKsQJmS5yuf)
 
 #### Constants
 
