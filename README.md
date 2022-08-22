@@ -167,33 +167,36 @@
         * [Go](#go-40)
       * [Short-circuiting a loop iteration](#short-circuiting-a-loop-iteration)
       * [Terminating a loop](#terminating-a-loop)
-    * [Today's Date as YYYY-MM-DD](#todays-date-as-yyyy-mm-dd)
+    * [Regular Expressions](#regular-expressions)
       * [Perl](#perl-39)
       * [Go](#go-41)
+    * [Today's Date as YYYY-MM-DD](#todays-date-as-yyyy-mm-dd)
+      * [Perl](#perl-40)
+      * [Go](#go-42)
     * [Functions](#functions)
       * [Functions without signatures](#functions-without-signatures)
-        * [Perl](#perl-40)
-        * [Go](#go-42)
+        * [Perl](#perl-41)
+        * [Go](#go-43)
     * [Running Tests](#running-tests)
-      * [Perl](#perl-41)
-      * [Go](#go-43)
+      * [Perl](#perl-42)
+      * [Go](#go-44)
     * [Debugging](#debugging)
       * [Printing Stack Traces](#printing-stack-traces)
-        * [Perl](#perl-42)
-        * [Go](#go-44)
+        * [Perl](#perl-43)
+        * [Go](#go-45)
     * [Sleep](#sleep)
-      * [Perl](#perl-43)
-      * [Go](#go-45)
-    * [Parsing URIs](#parsing-uris)
       * [Perl](#perl-44)
       * [Go](#go-46)
-    * [Changing URI Query Params](#changing-uri-query-params)
+    * [Parsing URIs](#parsing-uris)
+      * [Perl](#perl-45)
       * [Go](#go-47)
+    * [Changing URI Query Params](#changing-uri-query-params)
+      * [Go](#go-48)
     * [Command Line Scripts](#command-line-scripts)
       * [Print first argument to a script](#print-first-argument-to-a-script)
       * [Exiting a script](#exiting-a-script)
-        * [Perl](#perl-45)
-        * [Go](#go-48)
+        * [Perl](#perl-46)
+        * [Go](#go-49)
 
 <!-- vim-markdown-toc -->
 # go-for-perl-hackers
@@ -1711,6 +1714,59 @@ for {
 ```
 
 Note that `break` will exit the enclosing loop at the point where it is called.
+
+
+### Regular Expressions
+
+Match a string prefix.
+
+#### Perl
+
+```perl
+my $str = '5.5.1';
+if ( $str =~ m{\A5\.5} ) {
+    print "ok\n";
+}
+```
+
+#### Go
+
+[https://go.dev/play/p/rpACvjzRt-K](https://go.dev/play/p/rpACvjzRt-K)
+
+```go
+package main
+
+import (
+	"fmt"
+	"regexp"
+)
+
+func main() {
+	re := regexp.MustCompile(`\A5\.5`)
+	str := "5.5.1"
+	if re.MatchString(str) {
+		fmt.Println("ok")
+	}
+}
+```
+
+[https://go.dev/play/p/-NXI8SjMjJQ](https://go.dev/play/p/-NXI8SjMjJQ)
+
+```go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	str := "5.5.1"
+	if strings.HasPrefix(str, "5.5") {
+		fmt.Println("ok")
+	}
+}
+```
 
 ### Today's Date as YYYY-MM-DD
 
