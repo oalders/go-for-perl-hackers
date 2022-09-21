@@ -113,90 +113,93 @@
       * [Checking if a Hash/Map Key Exists](#checking-if-a-hashmap-key-exists)
         * [Perl](#perl-22)
         * [Go](#go-24)
-      * [Deleting a Hash/Map Key](#deleting-a-hashmap-key)
+      * [Using a Hash/Map to Track Seen Things](#using-a-hashmap-to-track-seen-things)
         * [Perl](#perl-23)
         * [Go](#go-25)
-      * [Getting a List of Hash/Map Keys](#getting-a-list-of-hashmap-keys)
+      * [Deleting a Hash/Map Key](#deleting-a-hashmap-key)
         * [Perl](#perl-24)
         * [Go](#go-26)
-      * [Slices:](#slices)
+      * [Getting a List of Hash/Map Keys](#getting-a-list-of-hashmap-keys)
         * [Perl](#perl-25)
         * [Go](#go-27)
-      * [Appending Slices:](#appending-slices)
+      * [Slices:](#slices)
         * [Perl](#perl-26)
         * [Go](#go-28)
-    * [Dumping Data Structures](#dumping-data-structures)
-      * [To your terminal](#to-your-terminal)
+      * [Appending Slices:](#appending-slices)
         * [Perl](#perl-27)
         * [Go](#go-29)
-      * [To disk (write)](#to-disk-write)
+    * [Dumping Data Structures](#dumping-data-structures)
+      * [To your terminal](#to-your-terminal)
         * [Perl](#perl-28)
         * [Go](#go-30)
-      * [To disk (append)](#to-disk-append)
+      * [To disk (write)](#to-disk-write)
         * [Perl](#perl-29)
         * [Go](#go-31)
-    * [File Operations](#file-operations)
-      * [Creating a directory](#creating-a-directory)
+      * [To disk (append)](#to-disk-append)
         * [Perl](#perl-30)
         * [Go](#go-32)
-      * [Read an Entire File](#read-an-entire-file)
+    * [File Operations](#file-operations)
+      * [Creating a directory](#creating-a-directory)
         * [Perl](#perl-31)
         * [Go](#go-33)
-      * [Read First Line of a File](#read-first-line-of-a-file)
+      * [Read an Entire File](#read-an-entire-file)
         * [Perl](#perl-32)
         * [Go](#go-34)
-    * [Flow Control](#flow-control)
-      * [if](#if)
+      * [Read First Line of a File](#read-first-line-of-a-file)
         * [Perl](#perl-33)
         * [Go](#go-35)
-      * [else](#else)
+    * [Flow Control](#flow-control)
+      * [if](#if)
         * [Perl](#perl-34)
         * [Go](#go-36)
-      * [elsif / else if](#elsif--else-if)
+      * [else](#else)
         * [Perl](#perl-35)
         * [Go](#go-37)
-    * [Loops](#loops)
-      * [For loops](#for-loops)
+      * [elsif / else if](#elsif--else-if)
         * [Perl](#perl-36)
         * [Go](#go-38)
-      * [While loops](#while-loops)
+    * [Loops](#loops)
+      * [For loops](#for-loops)
         * [Perl](#perl-37)
         * [Go](#go-39)
-      * [Infinite loops](#infinite-loops)
+      * [While loops](#while-loops)
         * [Perl](#perl-38)
         * [Go](#go-40)
+      * [Infinite loops](#infinite-loops)
+        * [Perl](#perl-39)
+        * [Go](#go-41)
       * [Short-circuiting a loop iteration](#short-circuiting-a-loop-iteration)
       * [Terminating a loop](#terminating-a-loop)
     * [Regular Expressions](#regular-expressions)
-      * [Perl](#perl-39)
-      * [Go](#go-41)
-    * [Today's Date as YYYY-MM-DD](#todays-date-as-yyyy-mm-dd)
       * [Perl](#perl-40)
       * [Go](#go-42)
+    * [Today's Date as YYYY-MM-DD](#todays-date-as-yyyy-mm-dd)
+      * [Perl](#perl-41)
+      * [Go](#go-43)
     * [Functions](#functions)
       * [Functions without signatures](#functions-without-signatures)
-        * [Perl](#perl-41)
-        * [Go](#go-43)
+        * [Perl](#perl-42)
+        * [Go](#go-44)
     * [Running Tests](#running-tests)
-      * [Perl](#perl-42)
-      * [Go](#go-44)
+      * [Perl](#perl-43)
+      * [Go](#go-45)
     * [Debugging](#debugging)
       * [Printing Stack Traces](#printing-stack-traces)
-        * [Perl](#perl-43)
-        * [Go](#go-45)
+        * [Perl](#perl-44)
+        * [Go](#go-46)
     * [Sleep](#sleep)
-      * [Perl](#perl-44)
-      * [Go](#go-46)
-    * [Parsing URIs](#parsing-uris)
       * [Perl](#perl-45)
       * [Go](#go-47)
-    * [Changing URI Query Params](#changing-uri-query-params)
+    * [Parsing URIs](#parsing-uris)
+      * [Perl](#perl-46)
       * [Go](#go-48)
+    * [Changing URI Query Params](#changing-uri-query-params)
+      * [Go](#go-49)
     * [Command Line Scripts](#command-line-scripts)
       * [Print first argument to a script](#print-first-argument-to-a-script)
       * [Exiting a script](#exiting-a-script)
-        * [Perl](#perl-46)
-        * [Go](#go-49)
+        * [Perl](#perl-47)
+        * [Go](#go-50)
 
 <!-- vim-markdown-toc -->
 # go-for-perl-hackers
@@ -1102,6 +1105,42 @@ func main() {
 	}
 }
 ```
+#### Using a Hash/Map to Track Seen Things
+
+##### Perl
+
+```perl
+my %seen;
+$seen{sunrise} = 1;
+if ( exists $seen{sunrise} ) {
+   ...
+}
+```
+
+##### Go
+
+
+[https://go.dev/play/p/d1RTCE1pmaH](https://go.dev/play/p/d1RTCE1pmaH)
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	seen := make(map[string]struct{})
+	seen["sunrise"] = struct{}{}
+	if _, ok := seen["sunrise"]; ok {
+		fmt.Println("I have seen the sunrise")
+	}
+}
+```
+
+The motivation here is that if the value has no inherent meaning, it could be
+confusing to assign it something which could convey a meaning, like `true` or
+`false`. There may be a small performance gain in terms of memory when using
+`struct{}`, but it may not be any faster.
+[https://gist.github.com/davecheney/3be245c92b61e5045f75](https://gist.github.com/davecheney/3be245c92b61e5045f75)
 
 #### Deleting a Hash/Map Key
 
