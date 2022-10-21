@@ -1178,7 +1178,7 @@ my @keys = keys %pages;
 
 ##### Go
 
-[https://play.golang.org/p/b21XYOReH6S](https://play.golang.org/p/b21XYOReH6S)
+[https://go.dev/play/p/Z8OlHN7Q3GY](https://go.dev/play/p/Z8OlHN7Q3GY)
 
 ```go
 package main
@@ -1191,7 +1191,7 @@ func main() {
 	pages := make(map[string]string)
 	pages["home"] = "https://metacpan.org"
 
-	keys := []string{}
+	var keys []string
 	for k := range pages {
 		keys = append(keys, k)
 	}
