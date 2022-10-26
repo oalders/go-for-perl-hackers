@@ -1263,6 +1263,24 @@ var slice []int = array[2:4]
 slice = append(slice, 11, 12)
 ```
 
+In Go, if you want to add two slices together, you'll need to treat the second
+slice as a variadic paramater (`...`).
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	first := []int{1, 2}
+	second := []int{3, 4}
+	total := append(first, second...)
+	fmt.Printf("%+v", total)
+}
+```
+
+See [https://go.dev/play/p/ylbpv1KDjzE](https://go.dev/play/p/ylbpv1KDjzE)
+
 ### Dumping Data Structures
 
 #### To your terminal
