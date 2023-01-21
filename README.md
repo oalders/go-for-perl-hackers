@@ -229,21 +229,18 @@ call pathogen#infect()
 " Bundle: https://github.com/fatih/vim-go.git
 ```
 
-Now, open `vim` after installing `vim-go` and enter `:GoInstallBinaries`
+Now, open `vim` after installing `vim-go` and enter `:GoInstallBinaries`. This
+will helpfully install some binaries for you like `goimports` and `godef`.
 
-Also, you can add `goimports`:
-
-First install it: `go get golang.org/x/tools/cmd/goimports`
-
-Then add the following to your `.vimrc`
-
-`let g:go_fmt_command = "goimports"`
-
-If your editor is set up to display tabs visually, you may want to disable that for Go files.
+If your editor is set up to display tabs visually, you may want to disable that
+for Go files.
 
 ```vim
 autocmd FileType go setlocal nolist
 ```
+
+You can also have a look at [my vim-go config](https://github.com/oalders/dot-files/blob/main/vim/ftplugin/go.vim) for a few ideas.
+
 
 #### shortcuts
 
