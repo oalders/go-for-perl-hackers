@@ -474,18 +474,29 @@ if ( ! defined $foo ) {
 ##### Go
 
 ```go
-var myString string
+package main
 
-if myString == "" {
-	fmt.Println("Empty")
-}
+import "fmt"
 
-var mySlice []int
+func main() {
+	var myString string
 
-if mySlice == nil {
-	fmt.Println("nil")
+	if myString == "" {
+		fmt.Println("Empty")
+	}
+
+	var mySlice []int
+
+	if mySlice == nil {
+		fmt.Println("nil")
+	}
+	if len(mySlice) == 0 {
+		fmt.Println("empty")
+	}
 }
 ```
+
+[Go Playground](https://go.dev/play/p/R2rQ4F8lyCu)
 
 #### Incrementing and Decrementing Integer
 
@@ -1265,26 +1276,19 @@ import (
 	"log"
 	"os"
 
-	"github.com/davecgh/go-spew/spew"
+	"github.com/sanity-io/litter"
 )
 
 func main() {
 	list := [3]int{1, 2, 3}
-
-	file, err := os.OpenFile(
-		"/tmp/foo.txt",
-		os.O_CREATE|os.O_WRONLY,
-		0666,
-	)
-
+	err := os.WriteFile("/tmp/foo.txt", []byte(litter.Sdump(list)), 0666)
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	spew.Fdump(file, list)
-	file.Close()
 }
 ```
+
+[Go Playground](https://go.dev/play/p/qjgoHlvYWfY)
 
 #### To disk (append)
 
