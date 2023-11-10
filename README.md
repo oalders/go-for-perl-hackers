@@ -344,8 +344,6 @@ pi := "3.14"          // implicit cast as string
 var noAssignment string // equivalent to: noAssignment := ""
 ```
 
-See [golang.org/ref/spec#Rune_literals](https://golang.org/ref/spec#Rune_literals)
-
 #### Multiple Variables
 
 ##### Declare without explicit values
@@ -392,6 +390,8 @@ my $bar = "$foo baz"; # allow for variable interpolation
 foo := "本" // implicitly cast as a string
 foo := '本' // implicitly cast as a rune
 ```
+
+See [golang.org/ref/spec#Rune_literals](https://golang.org/ref/spec#Rune_literals)
 
 #### Multiline strings
 
