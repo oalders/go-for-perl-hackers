@@ -1211,7 +1211,7 @@ Or:
 ```go
 package main
 
-import "github.com/davecgh/go-spew/spew"
+import "github.com/sanity-io/litter"
 
 func main() {
 	var config struct {
@@ -1222,7 +1222,7 @@ func main() {
 	config.user = "florence"
 	config.pass = "machine"
 
-	spew.Dump(config)
+	litter.Dump(config)
 
 	return
 }
