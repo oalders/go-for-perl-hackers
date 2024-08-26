@@ -87,8 +87,8 @@
         * [Go using only primary return value](#go-using-only-primary-return-value)
         * [Perl using each](#perl-using-each)
         * [Go using both primary and secondary return values](#go-using-both-primary-and-secondary-return-values)
-        * [Perl using values](#perl-using-values)
-        * [Go using ignoring primary return value, using only secondary return value](#go-using-ignoring-primary-return-value-using-only-secondary-return-value)
+        * [Perl: using values](#perl-using-values)
+        * [Go: ignoring primary return value, using only secondary return value](#go-ignoring-primary-return-value-using-only-secondary-return-value)
       * [Checking if a Hash/Map Key Exists](#checking-if-a-hashmap-key-exists)
         * [Perl](#perl-23)
         * [Go](#go-25)
@@ -945,7 +945,7 @@ func main() {
 
 * [Go Playground](https://go.dev/play/p/01_1pFznIHQ)
 
-##### Perl using values
+##### Perl: using values
 
 ```perl
 my %hash = ( key_1 => 'foo', key_2 => 'bar', );
@@ -954,7 +954,7 @@ for my $value ( values %hash ) {
 }
 ```
 
-##### Go using ignoring primary return value, using only secondary return value
+##### Go: ignoring primary return value, using only secondary return value
 
 ```go
 package main
