@@ -1004,6 +1004,7 @@ func main() {
 	}
 }
 ```
+
 #### Using a Hash/Map to Track Seen Things
 
 ##### Perl
@@ -1017,7 +1018,6 @@ if ( exists $seen{sunrise} ) {
 ```
 
 ##### Go
-
 
 [https://go.dev/play/p/d1RTCE1pmaH](https://go.dev/play/p/d1RTCE1pmaH)
 
@@ -1129,16 +1129,22 @@ Also:
 
 See [https://tour.golang.org/moretypes/8](https://tour.golang.org/moretypes/8)
 
-Note also that slices in Go can use defaults for lower and upper bounds. That means that for the array of 10 integers `var a [10]int`, the following slices are equivalent:
+Note also that slices in Go can use defaults for lower and upper bounds. That
+means that for the array of 10 integers `var a [10]int`, the following slices
+are equivalent:
 
 ```go
+var a [10]int
+
 a[0:10] // explicit lower to upper bound
 a[:10]  // use default lower bound (0)
 a[0:]   // use default upper bound (0)
 a[:]    // use default upper and lower bounds (0 and 10)
 ```
 
-Note that the lower bound is the starting point in the index (ie 0) and the _length_ of the slice is the upper bound, which is why the entire slice consists of `a[0:10` and _not_ `a[0:9]`.
+Note that the lower bound is the starting point in the index (ie 0) and the
+_length_ of the slice is the upper bound, which is why the entire slice
+consists of `a[0:10` and _not_ `a[0:9]`.
 
 See [https://tour.golang.org/moretypes/10](https://tour.golang.org/moretypes/10)
 
@@ -1152,7 +1158,8 @@ my @slice = @list[2..4];
 push @slice, 11, 12;
 ```
 
-Note that in Perl, a slice of an array is also an array, so there's no need to make a distinction between the two.
+Note that in Perl, a slice of an array is also an array, so there's no need to
+make a distinction between the two.
 
 ##### Go
 
@@ -1163,7 +1170,7 @@ slice = append(slice, 11, 12)
 ```
 
 In Go, if you want to add two slices together, you'll need to treat the second
-slice as a variadic paramater (`...`).
+slice as a variadic parameter (`...`).
 
 ```go
 package main
@@ -1401,8 +1408,6 @@ my $content = path('path', 'to', 'file')->slurp_utf8;
 Note that in this case `dat` is `[]byte`
 
 ```go
-// You can edit this code!
-// Click here and start typing.
 package main
 
 import (
@@ -1663,7 +1668,6 @@ for {
 ```
 
 Note that `break` will exit the enclosing loop at the point where it is called.
-
 
 ### Regular Expressions
 
