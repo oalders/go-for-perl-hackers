@@ -259,6 +259,9 @@ func main() {
 }
 ```
 
+See "Double vs Single Quotes" for more information on why single quotes are not
+used to quote strings in Go.
+
 #### Formatted print statements.
 
 ##### Perl
@@ -344,6 +347,11 @@ pi := "3.14"          // implicit cast as string
 var noAssignment string // equivalent to: noAssignment := ""
 ```
 
+<https://go.dev/tour/basics/11>:
+
+> When you need an integer value you should use int unless you have a specific
+> reason to use a sized or unsigned integer type.
+
 #### Multiple Variables
 
 ##### Declare without explicit values
@@ -391,7 +399,16 @@ foo := "本" // implicitly cast as a string
 foo := '本' // implicitly cast as a rune
 ```
 
-See [golang.org/ref/spec#Rune_literals](https://golang.org/ref/spec#Rune_literals)
+Rune is an alias for `int32` and represents a Unicode code point.
+
+For example: `fmt.Println('a')` prints 97, which is hexadecimal 61. The Unicode
+for `a` is `U+0061`.
+
+To print the Hex value of `'a'` you can also do `fmt.Println("%x", 'a')`
+
+See
+[golang.org/ref/spec#Rune_literals](https://golang.org/ref/spec#Rune_literals)
+and <https://go.dev/tour/basics/11>
 
 #### Multiline strings
 
