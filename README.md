@@ -406,6 +406,15 @@ for `a` is `U+0061`.
 
 To print the Hex value of `'a'` you can also do `fmt.Println("%x", 'a')`
 
+Go expects only a single letter inside single quotes, so this will yield a
+compile time error:
+
+```go
+fmt.Printf("%s", 'hello')
+```
+
+> more than one character in rune literal
+
 See
 [golang.org/ref/spec#Rune_literals](https://golang.org/ref/spec#Rune_literals)
 and <https://go.dev/tour/basics/11>
