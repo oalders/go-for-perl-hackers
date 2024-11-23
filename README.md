@@ -1274,10 +1274,10 @@ import (
 
 func main() {
 	data := []string{"one", "two", "three"}
-	fmt.Println(PrettyJSON(data))
+	fmt.Println(prettyJSON(data))
 }
 
-func PrettyJSON(target interface{}) string {
+func prettyJSON(target any) string {
 	data, err := json.MarshalIndent(target, "", "    ")
 	if err != nil {
 		log.Fatalf("Cannot create pretty json from %v: %v", target, err)
