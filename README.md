@@ -176,9 +176,11 @@
       * [Go](#go-50)
     * [Command Line Scripts](#command-line-scripts)
       * [Print first argument to a script](#print-first-argument-to-a-script)
-      * [Exiting a script](#exiting-a-script)
         * [Perl](#perl-48)
         * [Go](#go-51)
+      * [Exiting a script](#exiting-a-script)
+        * [Perl](#perl-49)
+        * [Go](#go-52)
 
 <!-- vim-markdown-toc -->
 # go-for-perl-hackers
@@ -1942,9 +1944,13 @@ func main() {
 
 #### Print first argument to a script
 
+##### Perl
+
 ```perl
 print $ARGV[0], "\n" if $ARGV[0];
 ```
+
+##### Go
 
 ```go
 package main
