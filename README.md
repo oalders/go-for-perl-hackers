@@ -162,6 +162,7 @@
     * [Running Tests](#running-tests)
       * [Perl](#perl-44)
       * [Go](#go-46)
+        * [Test Coverage](#test-coverage)
     * [Debugging](#debugging)
       * [Printing Stack Traces](#printing-stack-traces)
         * [Perl](#perl-45)
@@ -1831,6 +1832,17 @@ To bypass Go's test caching:
 ```shell
 $ go test -count=1
 ```
+
+##### Test Coverage
+
+To generate a coverage report:
+
+```shell
+go test -v ./... -coverprofile cover.out && go tool cover -html cover.out -o cover.html
+```
+
+At this point you can view `cover.html` in a web browser and get a nice visual
+of your test coverage.
 
 ### Debugging
 
