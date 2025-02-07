@@ -1820,19 +1820,11 @@ Use the `-v` flag for verbose output:
 $ go test -v
 ```
 
-If you're using `vim-go`, use `:GoTest` either from your `foo.go` or
-`foo_test.go`. (Note, you can also use `:GoAlternate` to toggle between the
-two files.)
-
 To test a subset of functions:
 
 ```shell
 $ go test -run regexp
 ```
-
-If you're using `vim-go`, move your cursor to the name of the function you'd
-like to test. Running `:GoTest` here will run the function you're currently
-in.
 
 To bypass Go's test caching:
 
