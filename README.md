@@ -1031,7 +1031,7 @@ if ( exists $seen{sunrise} ) {
 
 ##### Go
 
-[https://go.dev/play/p/d1RTCE1pmaH](https://go.dev/play/p/d1RTCE1pmaH)
+<https://go.dev/play/p/qJOz7_p0ptS>
 
 ```go
 package main
@@ -1039,7 +1039,7 @@ package main
 import "fmt"
 
 func main() {
-	seen := make(map[string]struct{})
+	seen := map[string]struct{}{}
 	seen["sunrise"] = struct{}{}
 	if _, ok := seen["sunrise"]; ok {
 		fmt.Println("I have seen the sunrise")
