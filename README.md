@@ -1154,7 +1154,7 @@ a[:]    // use default upper and lower bounds (0 and 10)
 
 Note that the lower bound is the starting point in the index (ie 0) and the
 _length_ of the slice is the upper bound, which is why the entire slice
-consists of `a[0:10` and _not_ `a[0:9]`.
+consists of `a[0:10]` and _not_ `a[0:9]`.
 
 See [https://tour.golang.org/moretypes/10](https://tour.golang.org/moretypes/10)
 
