@@ -511,7 +511,7 @@ func main() {
 	var myString string
 
 	if myString == "" {
-		fmt.Println("Empty")
+		fmt.Println("empty string")
 	}
 
 	var mySlice []int
@@ -520,7 +520,7 @@ func main() {
 		fmt.Println("nil")
 	}
 	if len(mySlice) == 0 {
-		fmt.Println("empty")
+		fmt.Println("empty slice")
 	}
 }
 ```
