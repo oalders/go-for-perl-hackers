@@ -24,18 +24,19 @@ func editor() {
 		os.Exit(1)
 	}
 
+	// default: does not need to come last
 	switch editor {
+	default:
+		fmt.Printf(
+			"I don't know where the source code for \"%s\" is\n",
+			editor,
+		)
 	case "nvim":
 		fmt.Println("https://github.com/neovim/neovim")
 	case "vim":
 		fmt.Println("https://github.com/vim/vim")
 	case "nano":
 		fmt.Println("https://www.nano-editor.org/git.php")
-	default:
-		fmt.Printf(
-			"I don't know where the source code for \"%s\" is\n",
-			editor,
-		)
 	}
 }
 
