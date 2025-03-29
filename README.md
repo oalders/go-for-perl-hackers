@@ -3,85 +3,95 @@
 
 * [go-for-perl-hackers](#go-for-perl-hackers)
   * [Your editor](#your-editor)
-  * [Go vs Perl](#go-vs-perl)
-    * [Installing binaries:](#installing-binaries)
-      * [Perl](#perl)
-      * [Go](#go)
+  * [Installing binaries:](#installing-binaries)
+    * [Perl](#perl)
+    * [Go](#go)
+  * [Formatters and Tidiers](#formatters-and-tidiers)
+    * [Perl](#perl-1)
+    * [Go](#go-1)
+  * [Setting Up a New Developer Environment](#setting-up-a-new-developer-environment)
+    * [Perl](#perl-2)
+    * [Go](#go-2)
+  * [Setting Up a New CoderPad Environment](#setting-up-a-new-coderpad-environment)
+    * [Formatting Your CoderPad Code](#formatting-your-coderpad-code)
+      * [Go](#go-3)
+      * [Go Project](#go-project)
+  * [The Language](#the-language)
     * [Constructs](#constructs)
     * [Comments](#comments)
-      * [Perl](#perl-1)
-      * [Go](#go-1)
+      * [Perl](#perl-3)
+      * [Go](#go-4)
     * [Print](#print)
       * [Printing strings](#printing-strings)
-        * [Perl](#perl-2)
-        * [Go](#go-2)
-      * [Formatted print statements.](#formatted-print-statements)
-        * [Perl](#perl-3)
-        * [Go](#go-3)
-      * [Printing from within a test](#printing-from-within-a-test)
         * [Perl](#perl-4)
-        * [Go](#go-4)
+        * [Go](#go-5)
+      * [Formatted print statements.](#formatted-print-statements)
+        * [Perl](#perl-5)
+        * [Go](#go-6)
+      * [Printing from within a test](#printing-from-within-a-test)
+        * [Perl](#perl-6)
+        * [Go](#go-7)
     * [Variables](#variables)
       * [Environment Variables](#environment-variables)
-        * [Perl](#perl-5)
-        * [Go](#go-5)
+        * [Perl](#perl-7)
+        * [Go](#go-8)
       * [Variable Assignment](#variable-assignment)
-        * [Perl](#perl-6)
-        * [Go](#go-6)
+        * [Perl](#perl-8)
+        * [Go](#go-9)
       * [Multiple Variables](#multiple-variables)
         * [Declare without explicit values](#declare-without-explicit-values)
-          * [Perl](#perl-7)
-          * [Go](#go-7)
+          * [Perl](#perl-9)
+          * [Go](#go-10)
         * [Declare with explicit values](#declare-with-explicit-values)
-          * [Perl](#perl-8)
-          * [Go](#go-8)
+          * [Perl](#perl-10)
+          * [Go](#go-11)
       * [Double vs Single Quotes](#double-vs-single-quotes)
-        * [Perl](#perl-9)
-        * [Go](#go-9)
-      * [Multiline strings](#multiline-strings)
-        * [Perl](#perl-10)
-        * [Go](#go-10)
-      * [Boolean checks (true/false)](#boolean-checks-truefalse)
         * [Perl](#perl-11)
-        * [Go](#go-11)
-      * [Checking for (un)definedness](#checking-for-undefinedness)
-        * [Perl](#perl-12)
         * [Go](#go-12)
-      * [Incrementing and Decrementing Integer](#incrementing-and-decrementing-integer)
-        * [Perl](#perl-13)
+      * [Multiline strings](#multiline-strings)
+        * [Perl](#perl-12)
         * [Go](#go-13)
-      * [Division with Integers](#division-with-integers)
-        * [Perl](#perl-14)
+      * [Boolean checks (true/false)](#boolean-checks-truefalse)
+        * [Perl](#perl-13)
         * [Go](#go-14)
-      * [String Concatenation](#string-concatenation)
-        * [Perl](#perl-15)
+      * [Checking for (un)definedness](#checking-for-undefinedness)
+        * [Perl](#perl-14)
         * [Go](#go-15)
-      * [String Concatenation (Existing String)](#string-concatenation-existing-string)
-        * [Perl:](#perl-16)
-        * [Go:](#go-16)
-      * [string to byte array Conversion](#string-to-byte-array-conversion)
+      * [Incrementing and Decrementing Integer](#incrementing-and-decrementing-integer)
+        * [Perl](#perl-15)
+        * [Go](#go-16)
+      * [Division with Integers](#division-with-integers)
+        * [Perl](#perl-16)
         * [Go](#go-17)
-      * [byte array to string Conversion](#byte-array-to-string-conversion)
-        * [Go](#go-18)
-      * [Constants](#constants)
+      * [String Concatenation](#string-concatenation)
         * [Perl](#perl-17)
-        * [Go](#go-19)
+        * [Go](#go-18)
+      * [String Concatenation (Existing String)](#string-concatenation-existing-string)
+        * [Perl:](#perl-18)
+        * [Go:](#go-19)
+      * [string to byte array Conversion](#string-to-byte-array-conversion)
+        * [Go](#go-20)
+      * [byte array to string Conversion](#byte-array-to-string-conversion)
+        * [Go](#go-21)
+      * [Constants](#constants)
+        * [Perl](#perl-19)
+        * [Go](#go-22)
     * [Lists](#lists)
       * [Create an Array](#create-an-array)
-        * [Perl](#perl-18)
-        * [Go](#go-20)
-      * [Size of an array:](#size-of-an-array)
-        * [Perl](#perl-19)
-        * [Go](#go-21)
-      * [Hashes / Structs](#hashes--structs)
         * [Perl](#perl-20)
-        * [Go](#go-22)
-      * [Iterating Over a List](#iterating-over-a-list)
-        * [Perl](#perl-21)
         * [Go](#go-23)
-      * [Splitting a string](#splitting-a-string)
-        * [Perl](#perl-22)
+      * [Size of an array:](#size-of-an-array)
+        * [Perl](#perl-21)
         * [Go](#go-24)
+      * [Hashes / Structs](#hashes--structs)
+        * [Perl](#perl-22)
+        * [Go](#go-25)
+      * [Iterating Over a List](#iterating-over-a-list)
+        * [Perl](#perl-23)
+        * [Go](#go-26)
+      * [Splitting a string](#splitting-a-string)
+        * [Perl](#perl-24)
+        * [Go](#go-27)
       * [Iterating Over a Hash/Map](#iterating-over-a-hashmap)
         * [Perl using keys](#perl-using-keys)
         * [Go using only primary return value](#go-using-only-primary-return-value)
@@ -90,98 +100,101 @@
         * [Perl: using values](#perl-using-values)
         * [Go: ignoring primary return value, using only secondary return value](#go-ignoring-primary-return-value-using-only-secondary-return-value)
       * [Checking if a Hash/Map Key Exists](#checking-if-a-hashmap-key-exists)
-        * [Perl](#perl-23)
-        * [Go](#go-25)
-      * [Using a Hash/Map to Track Seen Things](#using-a-hashmap-to-track-seen-things)
-        * [Perl](#perl-24)
-        * [Go](#go-26)
-      * [Deleting a Hash/Map Key](#deleting-a-hashmap-key)
         * [Perl](#perl-25)
-        * [Go](#go-27)
-      * [Getting a List of Hash/Map Keys](#getting-a-list-of-hashmap-keys)
-        * [Perl](#perl-26)
         * [Go](#go-28)
-      * [Slices:](#slices)
-        * [Perl](#perl-27)
+      * [Using a Hash/Map to Track Seen Things](#using-a-hashmap-to-track-seen-things)
+        * [Perl](#perl-26)
         * [Go](#go-29)
-      * [Appending Slices:](#appending-slices)
-        * [Perl](#perl-28)
+      * [Deleting a Hash/Map Key](#deleting-a-hashmap-key)
+        * [Perl](#perl-27)
         * [Go](#go-30)
+      * [Getting a List of Hash/Map Keys](#getting-a-list-of-hashmap-keys)
+        * [Perl](#perl-28)
+        * [Go](#go-31)
+      * [Slices:](#slices)
+        * [Perl](#perl-29)
+        * [Go](#go-32)
+      * [Appending Slices:](#appending-slices)
+        * [Perl](#perl-30)
+        * [Go](#go-33)
+    * [Sleep](#sleep)
+      * [Perl](#perl-31)
+      * [Go](#go-34)
     * [Dumping Data Structures](#dumping-data-structures)
       * [To your terminal](#to-your-terminal)
-        * [Perl](#perl-29)
-        * [Go](#go-31)
+        * [Perl](#perl-32)
+        * [Go](#go-35)
       * [To disk (write)](#to-disk-write)
-        * [Perl](#perl-30)
-        * [Go](#go-32)
+        * [Perl](#perl-33)
+        * [Go](#go-36)
       * [To disk (append)](#to-disk-append)
-        * [Perl](#perl-31)
-        * [Go](#go-33)
+        * [Perl](#perl-34)
+        * [Go](#go-37)
     * [File Operations](#file-operations)
       * [Creating a directory](#creating-a-directory)
-        * [Perl](#perl-32)
-        * [Go](#go-34)
+        * [Perl](#perl-35)
+        * [Go](#go-38)
       * [Read an Entire File](#read-an-entire-file)
-        * [Perl](#perl-33)
-        * [Go](#go-35)
+        * [Perl](#perl-36)
+        * [Go](#go-39)
       * [Read First Line of a File](#read-first-line-of-a-file)
-        * [Perl](#perl-34)
-        * [Go](#go-36)
+        * [Perl](#perl-37)
+        * [Go](#go-40)
     * [Flow Control](#flow-control)
       * [if](#if)
-        * [Perl](#perl-35)
-        * [Go](#go-37)
+        * [Perl](#perl-38)
+        * [Go](#go-41)
       * [else](#else)
-        * [Perl](#perl-36)
-        * [Go](#go-38)
+        * [Perl](#perl-39)
+        * [Go](#go-42)
       * [elsif / else if](#elsif--else-if)
-        * [Perl](#perl-37)
-        * [Go](#go-39)
+        * [Perl](#perl-40)
+        * [Go](#go-43)
     * [Loops](#loops)
       * [For loops](#for-loops)
-        * [Perl](#perl-38)
-        * [Go](#go-40)
+        * [Perl](#perl-41)
+        * [Go](#go-44)
       * [While loops](#while-loops)
-        * [Perl](#perl-39)
-        * [Go](#go-41)
+        * [Perl](#perl-42)
+        * [Go](#go-45)
       * [Infinite loops](#infinite-loops)
-        * [Perl](#perl-40)
-        * [Go](#go-42)
+        * [Perl](#perl-43)
+        * [Go](#go-46)
       * [Short-circuiting a loop iteration](#short-circuiting-a-loop-iteration)
       * [Terminating a loop](#terminating-a-loop)
     * [Regular Expressions](#regular-expressions)
-      * [Perl](#perl-41)
-      * [Go](#go-43)
+      * [Perl](#perl-44)
+      * [Go](#go-47)
     * [Today's Date as YYYY-MM-DD](#todays-date-as-yyyy-mm-dd)
-      * [Perl](#perl-42)
-      * [Go](#go-44)
+      * [Perl](#perl-45)
+      * [Go](#go-48)
     * [Functions](#functions)
       * [Functions without signatures](#functions-without-signatures)
-        * [Perl](#perl-43)
-        * [Go](#go-45)
+        * [Perl](#perl-46)
+        * [Go](#go-49)
     * [Running Tests](#running-tests)
-      * [Perl](#perl-44)
-      * [Go](#go-46)
+      * [Perl](#perl-47)
+      * [Go](#go-50)
         * [Test Coverage](#test-coverage)
     * [Debugging](#debugging)
       * [Printing Stack Traces](#printing-stack-traces)
-        * [Perl](#perl-45)
-        * [Go](#go-47)
-    * [Sleep](#sleep)
-      * [Perl](#perl-46)
-      * [Go](#go-48)
-    * [Parsing URIs](#parsing-uris)
-      * [Perl](#perl-47)
-      * [Go](#go-49)
-    * [Changing URI Query Params](#changing-uri-query-params)
-      * [Go](#go-50)
-    * [Command Line Scripts](#command-line-scripts)
-      * [Print first argument to a script](#print-first-argument-to-a-script)
         * [Perl](#perl-48)
         * [Go](#go-51)
+    * [Sleep](#sleep-1)
+      * [Perl](#perl-49)
+      * [Go](#go-52)
+    * [Parsing URIs](#parsing-uris)
+      * [Perl](#perl-50)
+      * [Go](#go-53)
+    * [Changing URI Query Params](#changing-uri-query-params)
+      * [Go](#go-54)
+    * [Command Line Scripts](#command-line-scripts)
+      * [Print first argument to a script](#print-first-argument-to-a-script)
+        * [Perl](#perl-51)
+        * [Go](#go-55)
       * [Exiting a script](#exiting-a-script)
-        * [Perl](#perl-49)
-        * [Go](#go-52)
+        * [Perl](#perl-52)
+        * [Go](#go-56)
 
 <!-- vim-markdown-toc -->
 # go-for-perl-hackers
@@ -192,11 +205,9 @@ The primary aim of this cheat sheet is to help Perl programmers get up and runni
 
 I recommend setting up [gopls](https://pkg.go.dev/golang.org/x/tools/gopls).
 
-## Go vs Perl
+## Installing binaries:
 
-### Installing binaries:
-
-#### Perl
+### Perl
 
 ```perl
 cpm install -g App::perlimports
@@ -204,13 +215,112 @@ cpm install -g App::perlimports
 
 This will install a `perlimports` binary in your `$PATH`.
 
-#### Go
+### Go
 
 ```go
 go install golang.org/x/tools/cmd/goimports@latest
 ```
 
 This will install `goimports` into `$GOPATH/bin`
+
+## Formatters and Tidiers
+
+### Perl
+
+```shell
+perlimports -i file.pl
+perltidy -i file.pl
+perlcritic file.pl
+```
+
+### Go
+
+```shell
+goimports -w main.go
+gofmt -w main.go
+```
+
+See also <https://golangci-lint.run/welcome/install/#local-installation>
+
+## Setting Up a New Developer Environment
+
+### Perl
+
+```perl
+cpm install -g App::perlimports Perl::Tidy Perl::Critic
+```
+
+This will install a `perlimports`, `perltidy` and `perlcritic`.
+
+### Go
+
+```shell
+go install golang.org/x/tools/cmd/goimports@latest
+```
+
+## Setting Up a New CoderPad Environment
+
+As of this writing, CoderPads `go` version is
+
+> go1.22.2 linux/amd6
+
+That means we cannot install the ver latest version of `goimports`. We'll need to install an earlier tag.
+
+```shell
+go install golang.org/x/tools/cmd/goimports@v0.30.0
+```
+
+You can also install other helpful binaries, using `ubi`:
+
+```shell
+mkdir -p ~/bin && curl --silent --location https://raw.githubusercontent.com/houseabsolute/ubi/master/bootstrap/bootstrap-ubi.sh | sh
+
+export PATH=~/bin:$PATH
+
+ubi --project oalders/is --in ~/bin
+
+is known os name --debug
+is known arch
+```
+
+### Formatting Your CoderPad Code
+
+CoderPad will format Go code on save. If you'd rather do it at the command line, try running:
+
+#### Go
+
+```shell
+gofmt -w main.go && goimports -w main.go
+```
+
+Or just run `goimports` manually:
+
+```shell
+goimports -w main.go
+```
+
+#### Go Project
+
+In a Go Project on CoderPad, you can run `goimports` on save. Just edit the `.cpad` file to something like this:
+
+```json
+{
+  "targets": {
+    "run": {
+      "label": "Main",
+      "command": "goimports -w src/main.go && go run coderpad"
+    },
+    "test": {
+      "label": "Tests",
+      "command": "go test coderpad/echo"
+    }
+  }
+}
+```
+
+Note that the changed line is `targets.run.command`, which was originally just `go run coderpad`.
+
+## The Language
 
 ### Constructs
 
@@ -791,6 +901,8 @@ p %foo;
 
 ##### Go
 
+A struct is a collection of fields.
+
 [https://play.golang.org/p/wyeohYSw-cf](https://play.golang.org/p/wyeohYSw-cf)
 
 ```go
@@ -1196,6 +1308,26 @@ func main() {
 ```
 
 See [https://go.dev/play/p/ylbpv1KDjzE](https://go.dev/play/p/ylbpv1KDjzE)
+
+### Sleep
+
+#### Perl
+
+```perl
+sleep 2;
+```
+
+#### Go
+
+```go
+package main
+
+import "time"
+
+func main() {
+	time.Sleep(2 * time.Second)
+}
+```
 
 ### Dumping Data Structures
 
@@ -1756,6 +1888,8 @@ func main() {
 	fmt.Println(time.Now().Format("2006-01-02"))
 }
 ```
+
+See also [https://pkg.go.dev/time#pkg-constants](https://pkg.go.dev/time#pkg-constants)
 
 ### Functions
 
