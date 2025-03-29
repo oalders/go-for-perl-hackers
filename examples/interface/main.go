@@ -1,34 +1,44 @@
-// Package main demonstrates a simple use of interface
-// https://go.dev/tour/methods/9
 package main
 
 import "fmt"
 
-// Greeter defines an interface, which has the sole requirement that the struct
-// implement a method named Waves() which returns a string.
-type Greeter interface {
-	Waves() string
+// The only requirement of the Musician interface is that a Perform() function
+// must be implemented.
+type Musician interface {
+	Perform()
 }
 
-// The Usher type just contains a name.
-type Usher struct {
-	Name string
+type Drummer struct {
+	Emoji      string
+	Instrument string
+	Job        string
 }
 
-// Usher also implements the Waves() method
-func (u Usher) Waves() string {
-	return "o/"
+type Singer struct {
+	Emoji      string
+	Instrument string
+	Job        string
 }
 
-// hello() expects something which implements the Greeter interface.
-func hello(g Greeter) {
-	fmt.Println(g.Waves())
+func (d Drummer) Perform() {
+	fmt.Printf("%s The %s plays the %s\n", d.Emoji, d.Job, d.Instrument)
+}
+
+// play expects something that implements the Musician interface
+func play(m Musician) {
+	m.Perform()
 }
 
 func main() {
-	employee := Usher{Name: "Mario"}
+	neil := Drummer{Emoji: "🥁", Instrument: "drums", Job: "drummer"}
+	play(neil)
 
-	// Because Usher implements a Waves() method, we can now pass it to the
-	// hello() function.
-	hello(employee)
+	// If we uncomment the following code, it will throw the error:
+
+	//"cannot use geddy (variable of struct type Singer) as Musician value in
+	//argument to play: Singer does not implement Musician (missing method
+	//Perform)"
+
+	// geddy := Singer{Emoji: "🎙️", Instrument: "voice", Job: "singer"}
+	// play(geddy)
 }
