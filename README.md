@@ -1260,7 +1260,7 @@ var a [10]int
 
 a[0:10] // explicit lower to upper bound
 a[:10]  // use default lower bound (0)
-a[0:]   // use default upper bound (0)
+a[0:]   // use default upper bound (length of array, which is 10 in this case)
 a[:]    // use default upper and lower bounds (0 and 10)
 ```
 
