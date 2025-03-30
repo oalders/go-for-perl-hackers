@@ -12,6 +12,11 @@ import (
 
 func main() {
 	// Create a context that will time out after 3 seconds
+	//
+	// Background returns a non-nil, empty [Context]. It is never canceled, has no
+	// values, and has no deadline. It is typically used by the main function,
+	// initialization, and tests, and as the top-level Context for incoming
+	// requests.
 	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
 	defer cancel() // Always remember to call cancel to release resources
 
