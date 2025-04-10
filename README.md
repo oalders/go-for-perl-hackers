@@ -260,11 +260,12 @@ go install golang.org/x/tools/cmd/goimports@latest
 
 ## Setting Up a New CoderPad Environment
 
-As of this writing, CoderPads `go` version is
+As of this writing, CoderPad's `go` version in the "Go Application" sandbox is
 
 > go1.22.2 linux/amd6
 
-That means we cannot install the ver latest version of `goimports`. We'll need to install an earlier tag.
+That means we cannot install the very latest version of `goimports`. We'll need
+to install an earlier tag.
 
 ```shell
 go install golang.org/x/tools/cmd/goimports@v0.30.0
@@ -273,9 +274,8 @@ go install golang.org/x/tools/cmd/goimports@v0.30.0
 You can also install other helpful binaries, using `ubi`:
 
 ```shell
-mkdir -p ~/bin && curl --silent --location https://raw.githubusercontent.com/houseabsolute/ubi/master/bootstrap/bootstrap-ubi.sh | sh
-
 export PATH=~/bin:$PATH
+mkdir -p ~/bin && curl --silent --location https://raw.githubusercontent.com/houseabsolute/ubi/master/bootstrap/bootstrap-ubi.sh | sh
 
 ubi --project oalders/is --in ~/bin
 
@@ -308,7 +308,7 @@ In a Go Project on CoderPad, you can run `goimports` on save. Just edit the `.cp
   "targets": {
     "run": {
       "label": "Main",
-      "command": "goimports -w src/main.go && go run coderpad"
+      "command": "goimports -w src && go run coderpad"
     },
     "test": {
       "label": "Tests",
